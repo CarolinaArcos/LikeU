@@ -1,0 +1,10 @@
+<h1><%= @question.section.id %>). Pregunta</h1>
+<p><%= @question.header %></p>
+
+
+<% case @question.kind %>
+  <% when Question::YES_NO_QUESTION %>
+      <%= render partial: "yes_no_question" %>
+  <% when Question::VOLUME_QUESTION %>
+      <%= render partial: "volume_question" %>
+<% end %>

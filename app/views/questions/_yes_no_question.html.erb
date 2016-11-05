@@ -1,0 +1,16 @@
+<div>
+  <form>
+    <fieldset>
+      <legend></legend>
+      <h4>Elige un Respuesta</h4>
+        <% @question.options.each do | opt | %>
+          <label>
+            <input type="radio" name="resultadoSi">
+            <%= opt.body %>
+            <br>
+          </label>
+        <% end %>
+      <legend></legend>
+    </fieldset>
+	</form>
+</div>

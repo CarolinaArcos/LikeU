@@ -1,0 +1,35 @@
+<div>
+  <h2>Login</h2>
+</div>
+
+<div>
+  <span class="imagen">
+    <img src="">
+  </span>
+</div>
+
+<%= form_tag sessions_path, method: :post, class: "" do %>
+  <div>
+    <span class="label">Correo</span>
+    <%= text_field_tag :email, nil, placeholder: "Correo electronico" %>
+  </div>
+
+  <div>
+    <span class="label">Password</span>
+    <%= password_field_tag :password, nil, placeholder: "Contraseña" %>
+  </div>
+
+  <div>
+    <span class="boton">
+      <%= submit_tag "Iniciar Sesion" %>
+    </span>
+  </div>
+<% end %>
+
+<div>
+  <span class="link">
+    <a href="">
+      Olvide mi contraseña
+    </a>
+  </span>
+</div>

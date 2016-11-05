@@ -1,0 +1,38 @@
+<div><h2>Bienvenido(a)</h2></div>
+
+<div>
+  <span class="imagen">
+    <img src="">
+  </span>
+</div>
+
+<div>
+  <span class="texto">
+    <p>Gracias por ser parte de esta experiencia. Queremos que sea lo más comodo para ti, por eso queremos que tu mismo(a) escojas la cantidaddedias en los que quieres resolver la prueba.</p>
+    <p>Solo podras realizar una sesión de aproximadamente 15 minutos y tendras que esperar 60 minutos para poder realizar la sigeuinte.</p>
+  </span>
+</div>
+
+
+<%= form_for @user do |f| %>
+  <div>
+    <span class="label">
+      <samp>
+        <u>
+          Selecciona número de días
+        </u>
+      </samp>
+
+    <%= f.select(:complete_in_days) do %>
+      <% 7.times do | n | %>
+        <%= content_tag(:option, "#{n+1} dias", value: n+1) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <span class="boton">
+      <%= f.submit "Continuar" %>
+    </span>
+  </div>
+<% end %>

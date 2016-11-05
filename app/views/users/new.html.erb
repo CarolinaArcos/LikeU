@@ -1,0 +1,8 @@
+<h1> Registro </h1>
+
+<%= form_for @user do | f | %>
+  Nombre completo <%= f.text_field :name, placeholder:"Nombre completo y apellidos" %>
+  Correo <%= f.text_field :email, placeholder:"Correo electonico" %>
+  Contraseña <%= f.text_field :password, placeholder:"Contraseña  " %>
+  <%= f.submit("Done") %>
+<% end %>
