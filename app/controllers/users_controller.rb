@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.is_active = true
+    @user.started_at = Date.today
     if @user.update(user_params)
       redirect_to(user_path(@user))
     else
