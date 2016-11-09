@@ -21,6 +21,13 @@ class User < ApplicationRecord
     return self.answers.last
   end
 
+  def section_per_day
+    diff= 7.0/self.complete_in_days.to_f
+    sections_per_day = Array.new(self.complete_in_days, diff.to_i)
+    sections_per_day.first = (sections_per_day.first + 1) if diff.integer?
+    return sections_per_day
+  end
+
 
   private
 
