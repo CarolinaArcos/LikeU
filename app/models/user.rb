@@ -32,11 +32,13 @@ class User < ApplicationRecord
   end
 
   def can_continue?
+    unless get_last_answer.option.question.next.nil?
      return true if get_last_answer.option.question.next.section.eql? get_last_answer.option.question.section
-     self.answered_at = Date.today
-     self.save!
-     
-     return false
+    end
+    self.answered_at = Date.today
+    self.save!
+
+   return false
   end
 
   private
