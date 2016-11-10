@@ -4,8 +4,10 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
 
-    @answer = Answer.new(answer_params)
+    @answer = Answer.create_or_initialize(@question, current_user)
     @answer.user = current_user
+    @answer.question = @question
+    @answer.option_id = answer_params[:option_id]
 
     if @answer.save
       current_user.answered_at = Date.today
