@@ -8,6 +8,7 @@ class Question < ApplicationRecord
 
   validates :kind, inclusion: { in: %w(yes_no volume)}
 
+  #Return the next question adding 1 to the id
   def next
     return Question.find_by(id: self.id + 1)
   end

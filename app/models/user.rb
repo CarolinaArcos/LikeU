@@ -9,7 +9,8 @@ class User < ApplicationRecord
                       with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
                     }
 
-
+  # Authenticate the User by email and password. If doesn't exist or the password
+  # is wrong return false, else return the user
   def self.authenticate(email, password)
     user = User.find_by(email: email) #If exist: ok, if not: nil
     return nil if user.nil?
@@ -21,6 +22,8 @@ class User < ApplicationRecord
     return self.answers.last
   end
 
+  # Return an array especifying how many sections can do the user each day
+  # With diff.integer? ask if the number has decimal part
   def section_per_day
     diff= 7.0/self.complete_in_days.to_f
     sections_per_day = Array.new(self.complete_in_days, diff.to_i)
@@ -28,6 +31,7 @@ class User < ApplicationRecord
     return sections_per_day
   end
 
+  # Return false if the next question is in the same section, and true otherwise
   def finished_section?
     unless get_last_answer.option.question.next.nil?
      return true unless get_last_answer.option.question.next.section.eql? get_last_answer.option.question.section
@@ -35,6 +39,8 @@ class User < ApplicationRecord
    return false
   end
 
+  # Return true if the next question is in the same section, otherwise change
+  # answered_at to the current day and return false
   def can_continue?
     unless get_last_answer.option.question.next.nil?
      return true if get_last_answer.option.question.next.section.eql? get_last_answer.option.question.section
@@ -45,18 +51,21 @@ class User < ApplicationRecord
    return false
   end
 
+  # Return true if there is an hour or more between answered_at and the current
+  # time, return false otherwise
   def hour_completed?
     return true if ((DateTime.now - self.answered_at) * 24).to_f > 1
     return false
   end
 
+  # Return how many days have pass since the user started the poll
   def days_until_today
     return ((Datetime.now - self.started_at).to_f)
   end
 
   private
 
-  # SHA1: kind of encryption algorithm
+  # Encripts the password using SHA2 (a kind of encryption algorithm)
   def encrypt
     self.password = Digest::SHA2.hexdigest(self.password)
   end
