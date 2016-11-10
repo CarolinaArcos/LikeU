@@ -28,7 +28,11 @@ class User < ApplicationRecord
     return sections_per_day
   end
 
-  def next_section
+  def finished_section?
+    unless get_last_answer.option.question.next.nil?
+     return true unless get_last_answer.option.question.next.section.eql? get_last_answer.option.question.section
+   end
+   return false
   end
 
   def can_continue?
@@ -39,6 +43,15 @@ class User < ApplicationRecord
     self.save!
 
    return false
+  end
+
+  def hour_completed?
+    return true if ((DateTime.now - self.answered_at) * 24).to_f > 1
+    return false
+  end
+
+  def days_until_today
+    return ((Datetime.now - self.started_at).to_f)
   end
 
   private

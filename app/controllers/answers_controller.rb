@@ -10,7 +10,7 @@ class AnswersController < ApplicationController
     @answer.option_id = answer_params[:option_id]
 
     if @answer.save
-      current_user.answered_at = Date.today
+      current_user.answered_at = DateTime.now
       current_user.save!
 
       if current_user.can_continue?

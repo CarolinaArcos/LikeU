@@ -10,28 +10,33 @@ class UsersController < ApplicationController
   end
 
   def show
-    #Proxima seccion a la que debe ir
-    @question = Question.find(current_user.get_last_answer.option.question.section.questions.first) unless current_user.get_last_answer.nil?
-    @question ||= Section.first.questions.first
+    #Apenas comienza
+    if current_user.get_last_answer.nil?
+      @question ||= Section.first.questions.first
+      @is_able = true
+    elsif current_user.get_last_answer.options.question.next.nil?
+      #redirect_to
+    else
+      #Ya ha comenzado
+      if current_user.finished_section #Si ya termino seccion
+        if current_user.hour_completed? #Si ya completo la hora
+          last_section_available = current_user.section_per_day[0...current_user.days_until_today].sum
 
-    @is_able = true
-
-    #if @next_question.section.eql? self.option.question.section
-
-    #time_after_answer = (current_user.answered_at - Date.today).to_i  unless current_user.answered_at.nil?
-    #unless time_after_answer.nil?
-    #  #TODO ..
-    #else
-    #  @is_able = true
-    #end
-    #@question = current_user.get_last_answer.question.section.questions.last unless current_user.get_last_answer.nil?
-    #@question ||= Section.first.questions.first
+          @question = current_user.get_last_answer.option.question.next
+          @is_able = true if @question.section.id < last_section_available #Si la siguiente seccion esta disponible para hacerla hoy
+        end
+      else
+        #Reinicia la seccion
+        @question = Question.find(current_user.get_last_answer.option.question.section.questions.first) unless current_user.get_last_answer.nil?
+        @is_able = true
+      end
+    end
   end
 
   def update
     @user = User.find(params[:id])
     @user.is_active = true
-    @user.started_at = Date.today
+    @user.started_at = DateTime.now
     if @user.update(user_params)
       redirect_to(user_path(@user))
     else

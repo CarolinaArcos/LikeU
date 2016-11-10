@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 20161110035802) do
     t.integer  "team_id"
     t.integer  "complete_in_days"
     t.boolean  "is_active"
-    t.date     "started_at"
-    t.date     "answered_at"
+    t.datetime "started_at"
+    t.datetime "answered_at"
     t.index ["email"], name: "index_users_on_email"
     t.index ["team_id"], name: "index_users_on_team_id"
   end
