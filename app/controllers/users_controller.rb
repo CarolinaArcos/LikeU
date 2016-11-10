@@ -10,8 +10,20 @@ class UsersController < ApplicationController
   end
 
   def show
-    @question = current_user.get_last_answer.question.section.questions.last unless current_user.get_last_answer.nil?
+    #Proxima seccion a la que debe ir
+    @question = Question.find(current_user.get_last_answer.option.question.section.questions.first unless current_user.get_last_answer.nil?
     @question ||= Section.first.questions.first
+
+    #if @next_question.section.eql? self.option.question.section
+
+    #time_after_answer = (current_user.answered_at - Date.today).to_i  unless current_user.answered_at.nil?
+    #unless time_after_answer.nil?
+    #  #TODO ..
+    #else
+    #  @is_able = true
+    #end
+    #@question = current_user.get_last_answer.question.section.questions.last unless current_user.get_last_answer.nil?
+    #@question ||= Section.first.questions.first
   end
 
   def update

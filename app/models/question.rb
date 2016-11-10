@@ -7,4 +7,8 @@ class Question < ApplicationRecord
   belongs_to :section
 
   validates :kind, inclusion: { in: %w(yes_no volume)}
+
+  def next
+    return Question.find(self.id + 1)
+  end
 end

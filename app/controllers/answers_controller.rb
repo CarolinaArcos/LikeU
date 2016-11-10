@@ -8,7 +8,6 @@ class AnswersController < ApplicationController
       if @next_question.section.eql? self.option.question.section
         redirect_to(question_path(@next_question))
       else
-        #TODO change answered_at
         current_user.answered_at = Date.today
         current_user.save!
         #TODO send to user show
