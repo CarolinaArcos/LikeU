@@ -1,16 +1,15 @@
+<%= form_for [@question, @answer] do | f | %>
 <div>
-  <form>
-    <fieldset>
-      <legend></legend>
-      <h4>Elige un Respuesta</h4>
-        <% @question.options.each do | opt | %>
-          <label>
-            <input type="radio" name="resultadoSi">
-            <%= opt.body %>
-            <br>
-          </label>
-        <% end %>
-      <legend></legend>
-    </fieldset>
-	</form>
+  <legend></legend>
+  <h4>Elige un Respuesta</h4>
+    <% @question.options.each do | opt | %>
+      <label>
+        <%= f.radio_button :option_id, opt.id %>
+        <%= opt.body %>
+        <br>
+      </label>
+    <% end %>
+  <legend></legend>
 </div>
+<%= f.submit "Continuar" %>
+<% end %>

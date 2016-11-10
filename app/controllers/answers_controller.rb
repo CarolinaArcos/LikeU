@@ -1,21 +1,23 @@
 class AnswersController < ApplicationController
+  before_action :autheticate!, only: [:create]
 
   def create
+    @question = Question.find(params[:question_id])
+
     @answer = Answer.new(answer_params)
+    @answer.user = current_user
 
     if @answer.save
-      @next_question = Question.find(self.option.question.id + 1)
-      if @next_question.section.eql? self.option.question.section
-        redirect_to(question_path(@next_question))
+      current_user.answered_at = Date.today
+      current_user.save!
+
+      if current_user.can_continue?
+        redirect_to @question.next
       else
-        #TODO change answered_at
-        current_user.answered_at = Date.today
-        current_user.save!
-        #TODO send to user show
-        #TODO start hour
+        redirect_to current_user # Posible que esto falle
       end
     else
-      #render()
+      render json: { errors: ['can not save the answer'] }
     end
   end
 
