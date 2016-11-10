@@ -24,10 +24,20 @@ class User < ApplicationRecord
   def section_per_day
     diff= 7.0/self.complete_in_days.to_f
     sections_per_day = Array.new(self.complete_in_days, diff.to_i)
-    sections_per_day.first = (sections_per_day.first + 1) if diff.integer?
+    sections_per_day[0] = (sections_per_day.first + 1) unless diff.integer?
     return sections_per_day
   end
 
+  def next_section
+  end
+
+  def can_continue?
+     return true if get_last_answer.option.question.next.section.eql? get_last_answer.option.question.section
+     self.answered_at = Date.today
+     self.save!
+     
+     return false
+  end
 
   private
 
@@ -39,7 +49,5 @@ class User < ApplicationRecord
   def set_active_default
     self.is_active = false
   end
-
-
 
 end
