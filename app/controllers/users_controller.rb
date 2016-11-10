@@ -11,8 +11,10 @@ class UsersController < ApplicationController
 
   def show
     #Proxima seccion a la que debe ir
-    @question = Question.find(current_user.get_last_answer.option.question.section.questions.first unless current_user.get_last_answer.nil?
+    @question = Question.find(current_user.get_last_answer.option.question.section.questions.first) unless current_user.get_last_answer.nil?
     @question ||= Section.first.questions.first
+
+    @is_able = true
 
     #if @next_question.section.eql? self.option.question.section
 
