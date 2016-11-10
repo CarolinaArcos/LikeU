@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   # Login
+  # Create the session using cokies
   def create
     @session = User.authenticate(params[:email], params[:password])
 
