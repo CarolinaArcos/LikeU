@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20161111020902) do
   end
 
   create_table "options", force: :cascade do |t|
-    t.text     "body"
+    t.string   "body"
     t.integer  "question_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
