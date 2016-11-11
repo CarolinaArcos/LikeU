@@ -22,7 +22,6 @@ class User < ApplicationRecord
     return self.answers.last
   end
 
-  # Return an array especifying how many sections can do the user each day
   # With diff.integer? ask if the number has decimal part
   def section_per_day
     diff= 7.0/self.complete_in_days.to_f
@@ -33,10 +32,8 @@ class User < ApplicationRecord
 
   # Return false if the next question is in the same section, and true otherwise
   def finished_section?
-    unless get_last_answer.option.question.next.nil?
-     return true unless get_last_answer.option.question.next.section.eql? get_last_answer.option.question.section
-   end
-   return false
+    return true unless get_last_answer.option.question.next.section.eql? get_last_answer.option.question.section
+    return false
   end
 
   # Return true if the next question is in the same section, otherwise change
@@ -45,7 +42,7 @@ class User < ApplicationRecord
     unless get_last_answer.option.question.next.nil?
      return true if get_last_answer.option.question.next.section.eql? get_last_answer.option.question.section
     end
-    self.answered_at = Date.today
+    self.answered_at = DateTime.current
     self.save!
 
    return false
@@ -54,13 +51,13 @@ class User < ApplicationRecord
   # Return true if there is an hour or more between answered_at and the current
   # time, return false otherwise
   def hour_completed?
-    return true if ((DateTime.now - self.answered_at) * 24).to_f > 1
+    return true if (((DateTime.now - self.answered_at.to_datetime) * 24.0).to_f) > 1.0
     return false
   end
 
   # Return how many days have pass since the user started the poll
   def days_until_today
-    return ((Datetime.now - self.started_at).to_f)
+    return ((DateTime.now - self.started_at.to_datetime).to_f)
   end
 
   private

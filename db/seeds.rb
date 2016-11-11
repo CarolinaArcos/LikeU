@@ -21,12 +21,14 @@ questions = Question.create([{header: 'Después de dedicar varios dias a desarro
                              option_a: 'Posponer la entrega hasta hacer los cambios que el compañero te dijo, con el riesgo
                                        de que él no tenga la razón',
                              option_b: 'Entregar el trabajo corriendo el riesgo de que el compañero esté en lo correcto',
+                             kind: Question::YES_NO_QUESTION,
                              section: sections.first},
                             {header: 'Llegas a un nuevo pusto de trabajo, en el que tus compañeros son muy diferentes a ti, en
                                       opinion,creencias y comportamiento, lo cual puede afectar tu puesto de trabajo y tu relacion
                                       con los compañeros, pasado unos dias la situacion no mejora, que decidirias:',
                              option_a: 'Actuar como ellos y desprenderte de tu identidad par ser aceptado por no colocar en riesgo tu trabajo',
                              option_b: 'Actuas tal y como eres, aunque no seas aceptado en el grupo y corriendo el riesgo de que afecte tu trabajo',
+                             kind: Question::YES_NO_QUESTION,
                              section: sections.first},
                             {header: 'Eres el líder de un proyecto con un equipo de trabajo de 6 integrantes.  El plan de trabajo lo has diseñado
                                       completamente y todo te está saliendo según lo planeado.  A última hora, uno de los integrantes del equipo
@@ -34,12 +36,14 @@ questions = Question.create([{header: 'Después de dedicar varios dias a desarro
                                       Qué haces:',
                              option_a: 'Decides hacerle caso a tu miembro del equipo corriendo el riesgo de estar equivocado',
                              option_b: 'Conservar los objetivos que inicialmente diseñaste, corriendo el riesgo de que estés equivocado',
+                             kind: Question::YES_NO_QUESTION,
                              section: sections.last},
                             {header: 'Llevas 4 años trabajando en una empresa, al dia de hoy renuncia el jefe de recursos humanos quien participaba
                                       en un proyecto importante y tu eres una de las seleccionadas para asumir el cargo, tu jefe te llama para
                                       entrevistarte y contarte la situacion, sabes que es un area nueva y que no lo manejas muy bien. Qué harias:',
                              option_a: 'Negarte a asumir el cargo apesar de la necesidad de la empreas',
                              option_b: 'Aceptas el cargo y te ezfuerzas para sacar el proyecto adelante',
+                             kind: Question::YES_NO_QUESTION,
                              section: sections.last}])
 
 options = Option.create([{body: Option::DEFINITELY_OPTION_A, question: questions.first},
