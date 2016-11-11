@@ -1,14 +1,14 @@
 <%= form_for [@question, @answer] do | f | %>
 <div>
   <legend></legend>
-  <h4>Elige un Respuesta</h4>
+  A. <%= @question.option_a %>
     <% @question.options.each do | opt | %>
       <label>
         <%= f.radio_button :option_id, opt.id %>
         <%= opt.body %>
-        <br>
       </label>
     <% end %>
+  B. <%= @question.option_b %>
   <legend></legend>
 </div>
 <%= f.submit "Continuar" %>

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def show
     # If the user is Starting the pool
     if current_user.get_last_answer.nil?
-      @question ||= Section.first.questions.first
+      @question = Section.first.questions.first
       @is_able = true
     # If the user is in the last question of the poll (Finishes all the poll)
     elsif current_user.get_last_answer.options.question.next.nil?

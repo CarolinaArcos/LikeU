@@ -3,12 +3,6 @@ class Question < ApplicationRecord
   YES_NO_QUESTION = "yes_no"
   VOLUME_QUESTION = "volume"
 
-  DEFINITELY_OPTION_1 = "definitely_opt_1"
-  MAYBE_OPTION_1 = "maybe_option_1"
-  NEUTRAL = "neutral"
-  MAYBE_OPTION_2 = "maybe_option_2"
-  DEFINITELY_OPTION_2 = "definitely_opt_2"
-
   has_many :options
   belongs_to :section
 
