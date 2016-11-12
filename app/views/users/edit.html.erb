@@ -1,4 +1,4 @@
-<div><h2>Bienvenido(a)</h2></div>
+<!-- <div><h2>Bienvenido(a)</h2></div>
 
 <div>
   <span class="imagen">
@@ -35,4 +35,98 @@
       <%= f.submit "Continuar" %>
     </span>
   </div>
-<% end %>
+<% end %> -->
+
+
+<!DOCTYPE HTML>
+	<!-- HEAD -->
+	<head>
+
+		<meta charset="utf-8"><!-- Determinacion de uso de caracteres -->
+		<title>LikeU Team</title><!-- Etiquetaparatitulo de la pagina -->
+
+		<!-- Enlace paraarchivos de Bootstrap -->
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<!-- Conenido CSS (Modificaciones Propias) -->
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+
+		<!-- Segmento para enlazar archivo JQuery -->
+		<script src="js/Jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+	</head>
+	<!-- FIN HEAD -->
+
+	<!-- BODY -->
+	<body>
+				<!-- Etiqueta para seccion de cabezera  -->
+				<header>
+					<!-- contenido cabezera -->
+					<div class="container-fluis"> <!-- container fluid toma todo el ancho de pagina -->
+						<div class="row"><!-- el class="ROW" Ayuda a organizar la pagina en filas -->
+							<div class="col-xs-12 col-sm-12 col-md-12">
+							</div>
+						</div>
+					</div>
+				</header>
+
+				<!-- Contenido central del cuerpo -->
+				<div id="container" class="text-justify">
+					<center>
+
+					<div class="col-xs-12 col-sm-12 col-md-12">
+
+							<div><h2>Bienvenido(a) <%= current_user.name.titleize %> </h2></div>
+
+							<div>
+								<p>Gracias por ser parte de esta experiencia. Queremos que sea lo más cómodo para ti,</p>
+								<p>por eso queremos que tú mismo(a) escojas la cantidad de días en los que quieres resolver la prueba.</p>
+								<p class="text-danger">Recuerda que solo podrás realizar una sesión de aproximadamente 15 minutos y tendrás que esperar 60 minutos para poder realizar la siguiente.</p>
+							</div>
+
+              <%= form_for @user do |f| %>
+                <div>
+                  <span class="label">
+                    <samp>
+                      <u>
+                        Selecciona número de días
+                      </u>
+                    </samp>
+
+                    <br>
+                    <br>
+                <div>
+                  <%= f.select(:complete_in_days) do %>
+                    <% 7.times do | n | %>
+                      <%= content_tag(:option, "#{n+1}", value: n+1) %>
+                    <% end %>
+                  <% end %>
+                </div>
+                </div>
+
+                <div>
+                    <button id="boton" class="btn btn-primary" type="submit">
+                      Iniciar Seccion
+                    </button>
+                </div>
+
+              <% end %>
+
+    			</div>
+
+					</center>
+				</div>
+
+				<!-- Seccion final de pagina -->
+				<footer>
+					<div class="container-fluid"></div>
+					<!-- contenido final -->
+					<div class="row">
+							<div class="col-md-12"> </div>
+						</div>
+				</footer>
+
+		</body>
+	<!-- FIN BODY -->
+</html>

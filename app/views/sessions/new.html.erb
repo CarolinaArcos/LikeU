@@ -1,35 +1,85 @@
-<div>
-  <h2>Login</h2>
-</div>
+<!DOCTYPE HTML>
+	<!-- HEAD -->
+	<head>
 
-<div>
-  <span class="imagen">
-    <img src="">
-  </span>
-</div>
+		<meta charset="utf-8"><!-- Determinacion de uso de caracteres -->
+		<title>LikeU Team</title><!-- Etiquetaparatitulo de la pagina -->
 
-<%= form_tag sessions_path, method: :post, class: "" do %>
-  <div>
-    <span class="label">Correo</span>
-    <%= text_field_tag :email, nil, placeholder: "Correo electronico" %>
-  </div>
+		<!-- Enlace paraarchivos de Bootstrap -->
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<!-- Conenido CSS (Modificaciones Propias) -->
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
 
-  <div>
-    <span class="label">Password</span>
-    <%= password_field_tag :password, nil, placeholder: "Contraseña" %>
-  </div>
+		<!-- Segmento para enlazar archivo JQuery -->
+		<script src="js/Jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+	<!-- FIN HEAD -->
 
-  <div>
-    <span class="boton">
-      <%= submit_tag "Iniciar Sesion" %>
-    </span>
-  </div>
-<% end %>
+	<!-- BODY -->
+	<body>
+				<!-- Etiqueta para seccion de  cabezera  -->
+  	<header>
+  	<!-- contenido cabezera -->
+  		<div class="container-fluis"> <!-- container fluid toma todo el ancho de pagina -->
+  			<div class="row"><!-- el class="ROW" Ayuda a organizar la pagina en filas --></div>
+  		</div>
+  	</header>
 
-<div>
-  <span class="link">
-    <a href="">
-      Olvide mi contraseña
-    </a>
-  </span>
-</div>
+  	<!-- Contenido central del cuerpo -->
+  	<div class="container"><!-- "container" Para contenedor de ancho fijo-->
+		  <center>
+  			<div class="row">
+  				<div class="col-xs-12 col-sm-12 col-md-12">
+
+  					<div>
+              <h2>Login</h2>
+            </div>
+            <%= form_tag sessions_path, method: :post, class: "" do %>
+              <div class="form-bottom">
+                <form role="form" action="" method="post" class="login-form">
+              	<div class="form-group">
+
+                  <%= text_field_tag :email, nil, placeholder: 'Correo Electronico', class: "form-control"  %>
+                </div>
+                <div class="form-group">
+                  <%= text_field_tag :password, nil, placeholder: 'Contraseña', class: "form-password form-control"  %>
+                </div>
+								<div>
+									<!-- <a href="Bienvenida.html"> -->
+										<button id="boton" class="btn btn-primary" type="submit">
+											Iniciar Seccion
+										</button>
+									<!-- </a> -->
+								</div>
+								<div>
+									<a href="">
+										Olvide mi contraseña
+									</a>
+								</div>
+              </form>
+               </div>
+
+            <% end %>
+
+          </div>
+        </div>
+      </center>
+    </div>
+
+    <!-- Seccion final de pagina -->
+    <footer>
+      <div class="container-fluid">
+        <!-- contenido final -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12"> </div>
+        </div>
+      </div>
+
+    </footer>
+
+    </body>
+  <!-- FIN BODY -->
+
+	</html>	

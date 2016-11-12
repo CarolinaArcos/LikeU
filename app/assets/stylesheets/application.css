@@ -14,34 +14,40 @@
  *= require_self
  */
 
+ header{	background-color: none; }
+
  body{
-       font-family: Verdana;
-   font-size: 120%;
-   padding: 4em 4em 4em 4em;
+
+       font-family: inherit;
+       font-size: 20px;
+       color:white;
+       background-color: #0fa6c4;
  }
 
- div{
-   margin: 7px;
- }
+ footer{	background-color: none; }
 
- #window-container{
+ div{ padding: 5px; text-align: center; }
 
-   width: 60%;
-   align:center;
- }
+ input{ border-radius: 5px; color: black;}
 
- #finalizar{
+ a{ color:white; font-size: 20px;}
+ a:hover{ color: white; font-size: 20px;}
+
+ p{ font-size: 16px; }
+
+ h2{ font-size: 40px; color:white; }
+
+ u{ font-size: 15px; color:white; }
+
+ select{ color: black; }
+
+ /* CLASS */
+ .label{
    display:inline-block;
+   font-size: 20px;
    width: 150px;
-   border-radius: 50px;
  }
 
- #finalizar:hover{
-   background-color: green;
- }
-
- .boton{
-   padding: 20px;
-   display:inline-block;
-
- }
+ /* ID */
+ #boton{ border-radius: 50px; background-color: #B2D827; color: black; }
+ #boton:hover{ background-color: #F0A8A8; color: black; }
