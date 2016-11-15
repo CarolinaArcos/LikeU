@@ -1,9 +1,77 @@
-<h1> Bienvenido, <%= current_user.name.titleize %> </h1>
+<head>
 
-<% if @is_able %>
-  <p> este es un texto que todavia no se que voy a poner, pero sera algo interesante en un futuro :) </p>
-  <%= link_to("Continuar", question_path(@question), class: "btn btn-primary") %> <!-- TODO change path to game -->
-<% else %>
-  <p> Aún no tienes habilitada ninguna sección, espera que se complete el tiempo restante </p>
-  <%= "Continuar" %> <!-- TODO put Continuar as a button -->
-<% end %>
+  <meta charset="utf-8"><!-- Determinacion de uso de caracteres -->
+  <title>LikeU Team - Perfil</title><!-- Etiquetaparatitulo de la pagina -->
+
+  <!-- Enlace paraarchivos de Bootstrap -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <!-- Conenido CSS (Modificaciones Propias) -->
+  <link rel="stylesheet" type="text/css" href="css/estilos.css">
+
+  <!-- Segmento para enlazar archivo JQuery -->
+  <script src="js/Jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+</head>
+<!-- FIN HEAD -->
+
+<!-- BODY -->
+<body>
+
+      <header>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <a href="index.html"><button class="btn btn-default" id="btnContinuar" style="float:left;">Finalizar sesión</button></a>
+          </div>
+      </div>
+      </div>
+      </header>
+      <!-- Contenido central del cuerpo -->
+      <center>
+      <div id="container" class="col-xs-12 col-sm-12 col-md-12">
+
+          <div class="row"><!-- el class="ROW" Ayuda a organizar la pagina en filas -->
+            <div class="col-xs-12 col-sm-12 col-md-12"><h2>Bienvenido(a), <%= current_user.name.titleize %> </h2></div>
+          </div>
+
+          <% if @is_able %>
+            <fieldset>
+                <legend></legend>
+                <div class="row">
+                  <p> Este es un texto que todavia no se que voy a poner, pero sera algo interesante en un futuro :) </p>
+                </div>
+            </fieldset>
+
+            <div class="row"><!-- el class="ROW" Ayuda a organizar la pagina en filas -->
+              <div class="col-xs-12 col-sm-12 col-md-12">Progreso</div>
+              <div class="col-xs-12 col-sm-12 col-md-12"><progress value="0" max="100" id="progreso" style="float:center;background-color:black;"></progress></div>
+            </div>
+
+            <%= link_to("Continuar", question_path(@question), class: "btn btn-primary") %> <!-- TODO change path to game -->
+
+          <% else %>
+            <fieldset>
+                <legend></legend>
+                <div class="row">
+                  <p> Aún no tienes habilitada ninguna sección, espera que se complete el tiempo restante </p>
+                </div>
+            </fieldset>
+
+            <div class="row"><!-- el class="ROW" Ayuda a organizar la pagina en filas -->
+              <div class="col-xs-12 col-sm-12 col-md-12">Progreso</div>
+              <div class="col-xs-12 col-sm-12 col-md-12"><progress value="0" max="100" id="progreso" style="float:center;background-color:black;"></progress></div>
+            </div>
+
+            <%= "Continuar" %> <!-- TODO put Continuar as a button -->
+
+          <% end %>
+
+      </div>
+
+      </center>
+
+  </body>
+<!-- FIN BODY -->
+
+</html>
