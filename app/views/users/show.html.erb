@@ -1,4 +1,78 @@
-      <div id="container" class="col-xs-12 col-sm-12 col-md-12">
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">Instrucciones</h3>
+      </div>
+      <div class="modal-body">
+        <!-- Caja contenedora de respuestas -->
+        <div class="lead">
+          Los siguientes enunciados muestran situaciones de la vida cotidiana en las cuales usted debe tomar decisiones. Cada situación tiene cinco (5)
+          opciones de respuesta donde usted debe escoger solo una de ellas.
+          <br>
+          Cada decisión tiene un aspecto a factor y otro en contra, de tal manera que cualquier decisión es válida. Escoja la decisión que más se ajusta
+          a su forma de pensar. Evite escoger el valor intermedio (indeciso). Procure tomar una decisión.
+          <br>
+          Todos los enunciados deben ser respondidos.
+          <br>
+          <strong>Sugerencia:</strong> El éxito de los resultados depende de su sinceridad al contestar. Evite contestar buscando dejar una buena impresión.
+        </div>
+        <div><form id="">
+          <fieldset>
+            <legend></legend>
+            <div class="row">
+                  <div class="col-xs-12 col-sm-5 col-md-5">Opcion A:<p>contenido</p> </div>
+                  <div class="col-xs-12 col-sm-2 col-md-2"></div>
+                  <div class="col-xs-12 col-sm-5 col-md-5">Opcion B:<p>contenido</p> </div>
+                </div>
+        <div class="clearfix visible-xs-block"></div>
+
+
+                <div class="table-responsive">
+                  <div class="col-xs-12 col-sm-12 col-md-12">
+
+                    <table align="center" class="table table-striped " style="color:black; width:70%;">
+                      <tr>
+                        <td><label>Definiti vamente</label></td>
+                        <td><label>Tal vez</label></td>
+                        <td><label>Indeciso</label></td>
+                        <td><label>Tal vez</label></td>
+                        <td><label>Definiti vamente</label></td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="gold">A</td>
+                        <td bgcolor="gray">A</td>
+                        <td bgcolor=""></td>
+                        <td bgcolor="gray">B</td>
+                        <td bgcolor="gold">B</td>
+                      </tr>
+
+                      <tr>
+                        <td><input type="radio" name="resultado" value="Definitivamente A"></td>
+                        <td><input type="radio" name="resultado" value="Tal vez A"></td>
+                        <td><input type="radio" name="resultado" value="indeciso"></td>
+                        <td><input type="radio" name="resultado" value="Tal vez B"></td>
+                        <td><input type="radio" name="resultado" value="Definitivamente B"></td>
+                      </tr>
+                    </table>
+                  </div>
+
+                </div>
+            </fieldset>
+
+        </form></div>
+      </div>
+      <div class="modal-footer">
+        <%= link_to("Aceptar", question_path(@question), class: "btn btn-primary") %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal -->
+
+      <div id="container" class="col-xs-12 col-sm-12 col-md-12 text-white">
 
           <div class="row"><!-- el class="ROW" Ayuda a organizar la pagina en filas -->
             <div class="col-xs-12 col-sm-12 col-md-12"><h2>Bienvenido(a), <%= current_user.name.titleize %> </h2></div>
@@ -17,8 +91,11 @@
               <div class="col-xs-12 col-sm-12 col-md-12"><progress value="0" max="100" id="progreso" style="float:center;background-color:black;"></progress></div>
             </div>
 
-            <%= link_to("Continuar", question_path(@question), class: "btn btn-primary") %>
-            <!-- <%= link_to("Continuar", question_path(@question), class: "btn btn-primary") %> <!-- TODO change path to game --> -->
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+              Continuar
+            </button>
+            <!-- <%= link_to("Continuar", question_path(@question), class: "btn btn-primary") %> <!-- TODO change path to game -->
 
           <% else %>
             <fieldset>
