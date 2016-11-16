@@ -86,13 +86,13 @@
                 </div>
             </fieldset>
 
-            <div class="row"><!-- el class="ROW" Ayuda a organizar la pagina en filas -->
-              <div class="col-xs-12 col-sm-12 col-md-12">Progreso</div>
-              <div class="col-xs-12 col-sm-12 col-md-12"><progress value="0" max="100" id="progreso" style="float:center;background-color:black;"></progress></div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                60%
+              </div>
             </div>
-
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            <button  style="width:100%;" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
               Continuar
             </button>
             <!-- <%= link_to("Continuar", question_path(@question), class: "btn btn-primary") %> <!-- TODO change path to game -->
@@ -105,12 +105,13 @@
                 </div>
             </fieldset>
 
-            <div class="row"><!-- el class="ROW" Ayuda a organizar la pagina en filas -->
-              <div class="col-xs-12 col-sm-12 col-md-12">Progreso</div>
-              <div class="col-xs-12 col-sm-12 col-md-12"><progress value="0" max="100" id="progreso" style="float:center;background-color:black;"></progress></div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                60%
+              </div>
             </div>
 
-            <%= "Continuar" %> <!-- TODO put Continuar as a button -->
+            <a href="javascript:void(0);" class="btn btn-default" style="width:100%;">Continuar</a>
 
           <% end %>
 
