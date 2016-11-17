@@ -23,42 +23,36 @@
           <fieldset>
             <legend></legend>
             <div class="row">
-                  <div class="col-xs-12 col-sm-5 col-md-5">Opcion A:<p>contenido</p> </div>
-                  <div class="col-xs-12 col-sm-2 col-md-2"></div>
-                  <div class="col-xs-12 col-sm-5 col-md-5">Opcion B:<p>contenido</p> </div>
-                </div>
-        <div class="clearfix visible-xs-block"></div>
+              <div class="col-md-2"><strong>Opcion A:</strong><p></div>
+              <div class="col-md-8">
+                <div class="table-responsive" style="text-align:center;">
+                  <table align="center" class="table table-striped " style="color:black; width:70%;">
+                    <tr>
+                      <td><label>Definitivamente</label></td>
+                      <td><label>Tal vez</label></td>
+                      <td><label>Indeciso</label></td>
+                      <td><label>Tal vez</label></td>
+                      <td><label>Definitivamente</label></td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="gold">A</td>
+                      <td bgcolor="gray">A</td>
+                      <td style="background-color:#C0C7C9"</td>
+                      <td bgcolor="gray">B</td>
+                      <td bgcolor="gold">B</td>
+                    </tr>
 
-                <div class="table-responsive">
-                  <div class="col-xs-12 col-sm-12 col-md-12">
-
-                    <table align="center" class="table table-striped " style="color:black; width:70%;">
-                      <tr>
-                        <td><label>Definiti vamente</label></td>
-                        <td><label>Tal vez</label></td>
-                        <td><label>Indeciso</label></td>
-                        <td><label>Tal vez</label></td>
-                        <td><label>Definiti vamente</label></td>
-                      </tr>
-                      <tr>
-                        <td bgcolor="gold">A</td>
-                        <td bgcolor="gray">A</td>
-                        <td bgcolor=""></td>
-                        <td bgcolor="gray">B</td>
-                        <td bgcolor="gold">B</td>
-                      </tr>
-
-                      <tr>
-                        <td><input type="radio" name="resultado" value="Definitivamente A"></td>
-                        <td><input type="radio" name="resultado" value="Tal vez A"></td>
-                        <td><input type="radio" name="resultado" value="indeciso"></td>
-                        <td><input type="radio" name="resultado" value="Tal vez B"></td>
-                        <td><input type="radio" name="resultado" value="Definitivamente B"></td>
-                      </tr>
+                    <tr>
+                      <td><input type="radio" name="resultado" value="Definitivamente A"></td>
+                      <td><input type="radio" name="resultado" value="Tal vez A"></td>
+                      <td><input type="radio" name="resultado" value="indeciso"></td>
+                      <td><input type="radio" name="resultado" value="Tal vez B"></td>
+                      <td><input type="radio" name="resultado" value="Definitivamente B"></td>
+                    </tr>
                     </table>
                   </div>
-
                 </div>
+                <div class="col-md-2"><strong>Opcion B:</strong></div>
             </fieldset>
 
         </form></div>
@@ -113,7 +107,9 @@
       </div>
       <br><br>
 
-      <a href="javascript:void(0);" class="btn btn-default" style="width:100%;">Continuar</a>
+      <button  style="width:100%;" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" disabled="disabled">
+        Continuar
+      </button>
 
     <% end %>
 
