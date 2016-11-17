@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       @is_able = true
     # If the user is in the last question of the poll (Finishes all the poll)
     elsif current_user.get_last_answer.option.question.next.nil?
-      #redirect_to
+      redirect_to(user_finalize_path(current_user))
     else
       #If the user had already started
       if current_user.finished_section? #If the user finished the section
@@ -50,8 +50,6 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-
-
 
   private
 

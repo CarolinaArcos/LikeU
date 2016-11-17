@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources(:sessions, only: [:create, :new, :destroy])
 
-  resources(:users, except: [:destroy])
+  resources(:users, except: [:destroy]) do
+      get(:finalize)
+  end
 
   resources(:questions, only: [:show]) do
     resources(:answers, only: [:create, :update])
