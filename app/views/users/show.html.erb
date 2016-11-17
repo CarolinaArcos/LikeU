@@ -29,7 +29,6 @@
                 </div>
         <div class="clearfix visible-xs-block"></div>
 
-
                 <div class="table-responsive">
                   <div class="col-xs-12 col-sm-12 col-md-12">
 
@@ -74,47 +73,48 @@
 </div>
 <!-- End Modal -->
 
-      <div id="container" class="col-xs-12 col-sm-12 col-md-12 text-white">
+<div class "">
 
-          <div class="row"><!-- el class="ROW" Ayuda a organizar la pagina en filas -->
-            <div class="col-xs-12 col-sm-12 col-md-12"><h2>Bienvenido(a), <%= current_user.name.titleize %> </h2></div>
-          </div>
+  <div class="text-white">
+    <h1>Bienvenido(a) <%= current_user.name.titleize %> </h1>
+  </div>
+  <hr>
 
-          <% if @is_able %>
-            <fieldset>
-                <legend></legend>
-                <div class="row">
-                  <p> Este es un texto que todavia no se que voy a poner, pero sera algo interesante en un futuro :) </p>
-                </div>
-            </fieldset>
-
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                60%
-              </div>
-            </div>
-            <!-- Button trigger modal -->
-            <button  style="width:100%;" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-              Continuar
-            </button>
-            <!-- <%= link_to("Continuar", question_path(@question), class: "btn btn-primary") %> <!-- TODO change path to game -->
-
-          <% else %>
-            <fieldset>
-                <legend></legend>
-                <div class="row">
-                  <p> Aún no tienes habilitada ninguna sección, espera que se complete el tiempo restante </p>
-                </div>
-            </fieldset>
-
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                60%
-              </div>
-            </div>
-
-            <a href="javascript:void(0);" class="btn btn-default" style="width:100%;">Continuar</a>
-
-          <% end %>
-
+    <% if @is_able %>
+      <div class="lead text-white">
+        Es un gusto tenerte de vuelta.
+        Cada vez estamos más cerca de lograr nuestro objetivo y tu eres parte de este proceso, así que recuerda
+        presionar Continuar para seguir siendo parte de esta experiencia.
       </div>
+
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+          60%
+        </div>
+      </div>
+      <br><br>
+      <!-- Button trigger modal -->
+      <button  style="width:100%;" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Continuar
+      </button>
+      <!-- <%= link_to("Continuar", question_path(@question), class: "btn btn-primary") %> <!-- TODO change path to game -->
+
+    <% else %>
+      <div class="lead text-white">
+        Es un gusto tenerte de vuelta.
+        Por el momento no has completado el tiempo que requieres para realizar tu próxima prueba, pero tranquilo,
+        quedate pendiente que muy pronto podrás seguir compartiendo con nosotros.
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+          60%
+        </div>
+      </div>
+      <br><br>
+
+      <a href="javascript:void(0);" class="btn btn-default" style="width:100%;">Continuar</a>
+
+    <% end %>
+
+</div>

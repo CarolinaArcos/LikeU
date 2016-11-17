@@ -1,63 +1,15 @@
-<head>
-
-  <meta charset="utf-8"><!-- Determinacion de uso de caracteres -->
-  <title>LikeU Team - Prueba</title><!-- Etiquetaparatitulo de la pagina -->
-
-  <!-- Enlace paraarchivos de Bootstrap -->
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <!-- Conenido CSS (Modificaciones Propias) -->
-  <link rel="stylesheet" type="text/css" href="css/estilos.css">
-
-  <!-- Segmento para enlazar archivo JQuery -->
-  <script src="js/Jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-
-    var respuestas={
-      op1:"",
-      op2:"",
-      op3:"",
-      op4:"",
-      op5:"",
-      op6:"",
-      op7:"",
-      op8:""
-
-    };
-
-    function cargar(){
-
-      var barra = document.getElementById("progreso")
-      barra.value+=10;
-
-      document.getElementById("formu").reset();
-
-      if(barra.value==100){
-        window.location.href="resultados.html";
-        barra.value=0;
-      }
-    }
-  </script>
-
-</head>
-
 <body>
 
       <!-- Contenido central del cuerpo -->
-      <center>
       <div id="container" class="col-xs-12 col-sm-12 col-md-12">
 
          <!-- <div>
            <h2>Titulo Prueba</h2>
          </div> -->
 
-         <fieldset>
-            <legend></legend>
-            <div class="row">
+         <div class="lead text-white">
               <p><%= @question.header %></p>
-            </div>
-        </fieldset>
+        </div>
 
         <% case @question.kind %>
           <% when Question::YES_NO_QUESTION %>
@@ -67,8 +19,5 @@
         <% end %>
 
       </div>
-</center>
-
-
 
 </body>
