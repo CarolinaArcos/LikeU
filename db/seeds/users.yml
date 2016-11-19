@@ -1,0 +1,27 @@
+#1
+-
+  name: Carolina
+  email: carolina@hotmail.com
+  password: 12345
+  team_id: 1
+
+#2
+-
+  name: Mateo
+  email: mateo@hotmail.com
+  password: 12345
+  team_id: 1
+
+#3
+-
+  name: Juan Esteban
+  email: juanesteban@hotmail.com
+  password: 12345
+  team_id: 1
+
+#4
+-
+  name: Elisa
+  email: elisa@hotmail.com
+  password: 12345
+  team_id: 1

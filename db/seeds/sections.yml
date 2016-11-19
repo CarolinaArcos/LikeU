@@ -1,0 +1,38 @@
+#1
+-
+  title: autoesquema
+  questions:
+    - header: >
+               Después de dedicar varios dias a desarrollar un proyecto, estás conforme con el resultado.
+               Debes entregarlo a tu jefe quien te está esperando en la oficina. De camino se lo muestras a
+               un compañero de trabajo y éste te dice que le hagas unos cambios al documento. Qué decides hacer:
+      kind: yes_no
+      option_a: Posponer la entrega hasta hacer los cambios que el compañero te dijo, con el riesgo de que él no tenga la razón.
+      option_b: Entregar el trabajo corriendo el riesgo de que el compañero esté en lo correcto
+      section_id: 1
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+
+# #2
+# - title: apertura mental
+#
+# #3
+# - title: perfeccionismo bajo
+#
+# #4
+# - title: detallista
+#
+# #5
+# - title: estabilidad emocional
+#
+# #6
+# - -title: extroversion
