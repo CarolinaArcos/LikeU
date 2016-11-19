@@ -1,7 +1,8 @@
-#1
+#Section 1
 -
   title: autoesquema
   questions:
+    # Question 1
     - header: >
                Después de dedicar varios dias a desarrollar un proyecto, estás conforme con el resultado.
                Debes entregarlo a tu jefe quien te está esperando en la oficina. De camino se lo muestras a
@@ -9,7 +10,112 @@
       kind: yes_no
       option_a: Posponer la entrega hasta hacer los cambios que el compañero te dijo, con el riesgo de que él no tenga la razón.
       option_b: Entregar el trabajo corriendo el riesgo de que el compañero esté en lo correcto
-      section_id: 1
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 2
+    - header: >
+               Trabajas en una empresa en la que tus compañeros son muy diferentes a ti en opiniones, creencias y comportamiento,
+               lo cual está afectando tu puesto de trabajo. Después de varias semanas en la misma situación ¿que decidirias?:
+      kind: yes_no
+      option_a: Actuar como ellos para no poner en riesgo tu trabajo
+      option_b: Actuar tal como eres, corriendo el riesgo de que afecte tu trabajo
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Quesiton 3
+    - header: >
+               A uno de tus compañeros de trabajo le han encargado procesar una información antes de entregarlo al día siguiente.
+               Tienes una tarea similarmente importante que debes entregar con urgencia. Tu compañero te pide ayuda para terminar
+               el trabajo. ¿Que harias?
+      kind: yes_no
+      option_a: Ayudar a tu amigo
+      option_b: Le dices que no puedes y no le ayudas
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Quesiton 4
+    - header: >
+               Acabas de salir del examen final y caes en la cuenta de que has te has equivocado en una de las respuestas afectando la
+               nota de todo el exámen. ¿Qué es lo habitual en tí?
+      kind: yes_no
+      option_a: Te quedas pensando mucho tiempo el tema con cierta preocupación
+      option_b: Lo olvidas rápidamente y no de das importancia
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Quesiton 5
+    - header: >
+               Cuando tienes que hablar en público para exponer un proyecto o algún tema en particular, cuál es tu reacción:
+      kind: yes_no
+      option_a: Improvisas y dejas que te salgan las ideas durante la exposición
+      option_b: Te pones algo nervioso, piensas bien lo que tienes que decir, y te preparas con anticipación
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Quesiton 6
+    - header: >
+               ¿Sientes en ocasiones que la gente no te comprende las ideasy te sientes solo con tu manera de pensar?
+      kind: yes_no
+      option_a: Si, eso me pasa
+      option_b: No, eso no me pasa
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    #Quesiton 7
+    - header: >
+               Eres de las personas que evita presentarse ante un público numeroso para evitar que te critiquen
+      kind: yes_no
+      option_a: No, no evito los públicos numerosos
+      option_b: Si, evito los públicos numerosos
       options:
         - body: definitely_opt_a
           value: 1
@@ -22,17 +128,649 @@
         - body: maybe_option_a
           value: 2
 
-# #2
-# - title: apertura mental
-#
-# #3
-# - title: perfeccionismo bajo
-#
-# #4
-# - title: detallista
-#
-# #5
-# - title: estabilidad emocional
-#
-# #6
-# - -title: extroversion
+# Section 2
+-
+  title: apertura mental
+  questions:
+    # Question 1
+    - header: >
+               Eres el líder de un proyecto con un equipo de trabajo de 6 integrantes.  El plan de trabajo lo has diseñado completamente
+               y todo te está saliendo según lo planeado.  A última hora, uno de los integrantes del equipo te propone hacer unos cambios
+               que reorientan casi por completo tu diseño.  Qué haces:
+      kind: yes_no
+      option_a: Conservas los objetivos que inicialmente diseñaste, corriendo el riesgo de que estés equivocado
+      option_b: Decides hacerle caso a tu miembro del equipo corriendo el riesgo de estar equivocado
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 2
+    - header: >
+               Trabajas en una empresa y eres asendido a un cargo que no tienes suficiente dominio para desempeñarlo.  ¿Que haces?
+      kind: yes_no
+      option_a: Negarte a asumir el cargo apesar de la necesidad de la empresa
+      option_b: Aceptas el cargo corriendo el riesgo de no cumplir las expectativas
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 3
+    - header: >
+               Estas presentando un proyecto ante la gerencia en el que has puesto mucho esfuerzo y del que depende que puedas asender
+               en la compañia. Tu proyecto está claramente definido pero en la mitad de tu presentación uno de tus compañeros de trabajo
+               sugiere cambios significativos en el planteamiento de la propuesta. Qué harias:
+      kind: yes_no
+      option_a: Defiendes tu planteamiento aunque el compañero tenga la razón
+      option_b: Cambias tu propuesta para ajsutarla a la idea de tu compañero
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 4
+    - header: >
+               Eres el encargado de hacer un tratamiento de datos en una empresa donde dudas que seas capaz de hacerlo.  Te enteras que algunos
+               compañeros han realizado este proceso anteriormente. ¿que decides hacer?
+      kind: yes_no
+      option_a: Hacer el trabajo tu solo para demostrar que eres bueno en el trabajo, aunque tal vez no lo logres.
+      option_b: Consultar primero con algunos compañeros para aprender como se hace pero dejas mala imágen de tu capacidad de trabajo.
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 5
+    - header: >
+               En una conversación donde hay varias personas con diferentes opiniones sobre un tema, acostumbras:
+      kind: yes_no
+      option_a: Exponer tu idea con énfasis para que se reconozca entre las personas
+      option_b: Escuchar las ideas de los demás y no imponer tu idea aunque pase desapersivida
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 6
+    - header: >
+               Te encuentras desarrollando una investigacion de suma importancia para la empresa. Si la finalizas quedarás como un
+               excelente trabajador.  De repente, el jefe le asigna el proyecto a otra persona. Ante situacion ¿que harias?
+      kind: yes_no
+      option_a: Le insistirías a tu jefe en terminar el proyecto para que quede como tu lo has diseñado
+      option_b: Entregas el proyecto sin oponerte sabiendo que modificarán toda tu idea.
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 7
+    - header: >
+               Te encuentras en un trabajo colaborativo que lleva dos meses en desarrollo y se les presenta un problema al que no han
+               podido darle solucion. Tu jefe requiere un informe de avances para el dia siquiente para dar los premios y recompensas;
+               ante esta situacion tu que harías
+      kind: yes_no
+      option_a: Presentar el informe con el avance que llevas y buscar que te reconozcan los créditos
+      option_b: Consultarle a otros a sabiendas que ellos se llevarán los créditos
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+
+# Section 3
+-
+  title: perfeccionismo bajo
+  questions:
+    # Question 1
+    - header: >
+               Es tiempo de entragar un trabajo y sabes que a éste le faltan algunas cosas que pueden ser mejoradas.
+               Teniendo en cuenta esto, decides:
+      kind: yes_no
+      option_a:  Entregar a tiempo reconociendo ante el jefe los errores que tiene
+      option_b: >
+                 Pedirle más tiempo a tu jefe para corregir las fallas con el riesgo de que el jefe se disguste porque
+                 no lograste acabar en el plazo establecido.
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 2
+    - header: >
+               Debes realizar varios reportes que te tomarán hasta el amanecer. Le prometiste a una de tus mejores amigas salir
+               a celebrar su cumpleaños. Teniendo en cuenta lo anterior, decides:
+      kind: yes_no
+      option_a: Salir con tu amiga y entregar el reporte aunque pueda contener algunos errores
+      option_b: >
+                 Llamar a tu amiga para cancelar la cita y quedarte trabajando toda la noche para que el trabajo quede perfecto,
+                 a pesar de que pueda afectar su amistad.
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 3
+    - header: >
+               Desde hace algunos meses le han encargado realizar un informe del estudio financiero para un proyecto de la empresa.
+               Su jefe enfatizó mucho en el plazo que tenía para realizarlo. Faltando algunos días para la entrega, te das cuenta que
+               hay algunos aspectos que no son claros y requieren un mayor énfasis, pero dado el tiempo, decides:
+      kind: yes_no
+      option_a: Omitir esos detalles y entregar el informe para cumplir con el tiempo establecido sin importar la baja calidad del informe
+      option_b: >
+                 Pediria mas tiempo a su jefe para corregir los detalles faltantes sabiendo que este tiempo adicional podrá colocar en riesgo
+                 el proyecto
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 4
+    - header: >
+               Debe realizar un trabajo en equipo y sabes que todos tienen ideas diferentes que al considerarlas, retrasarían el trabajo.  Decides:
+      kind: yes_no
+      option_a: Te reunes con el equipo para tomar en consideración sus opiniones a pesar de las demoras que causarán.
+      option_b: Realizar el trabajo tu solo para terminar rápido
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 5
+    - header: >
+               Le han asignado la tarea a un compañero de tu equipo de trabajo organizar un evento. Sabes que él es lento para trabajar y tal vez no termine
+               a tiempo, quedando más tu equipo.
+      kind: yes_no
+      option_a: Dejas que trabajen a la velocidad que ellos quieran
+      option_b: Decides tomar el control por tu cuenta para terminar de organizar el evento
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 6
+    - header: >
+               Están en un concuso donde tienes que realizar un trabajo en equipo, pero tu grupo no trabaja como tu quieres.
+      kind: yes_no
+      option_a: Trabajas con el equipo con el riesgo de que no terminen a tiempo para concursar
+      option_b: Trabajas a solas para que las cosas terminen a tiempo
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 7
+    - header: >
+               Eres el encargado de revisar la calidad de los productos de la bodega donde trabajas.  Encuentras algunos
+               defectuosos que pasarían desapercibidos. Realizan la venta de todo el lote y tu ganas comisión por ello. Tu decides:
+      kind: yes_no
+      option_a: Dejas que se venda el lote con la esperanza que no noten los defectos
+      option_b: Reportas los defectos y evitas que se venda todo el lote
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+
+# Section 4
+-
+  title: detallista
+  questions:
+    # Question 1
+    - header: >
+               Antes de presentar un informe tu acostumbras
+      kind: yes_no
+      option_a: Lees una sola vez y con eso es suficiente para dar por teminado el trabajo
+      option_b: Leer varias veces el contenido y te devuelves en repetidas ocaciones a verificar que todo este bien
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 2
+    - header: >
+               Cuando planea un proyecto, usted acostrubra:
+      kind: yes_no
+      option_a: Tomas los puntos principales y dejas que el desarrollo del proyecto de indique qué hacer
+      option_b: Entrar en detalle de todos los aspectos posibles para evitar que algo se te escape
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 3
+    - header: >
+               Cuando tienes que preparar un evento:
+      kind: yes_no
+      option_a: Preparas lo básico y esperas a que sucedan las cosas con tranquilidad
+      option_b: Preparas todo con anticipacion y revisas todo varias veces para que todo te salga bien
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 4
+    - header: >
+               Si tienes que realizar operaciones contables, acostumbras:
+      kind: yes_no
+      option_a: Hacer la operación una sola vez con la seguridad de que está bien.
+      option_b: Repetir la oreación varias veces hasta estar seguro que está bien
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 5
+    - header: >
+               Cuando sales de viaje, acostrubras:
+      kind: yes_no
+      option_a: Improvisar y ajustarse a las circunstancias
+      option_b: Planificar detalladamente el recorrido, las actividades, los lugares que visitarás
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 6
+    - header: >
+               Te encuentras en una reunion de trabajo donde se discute un tema que no tiene que ver contigo ni te afecta en la labor que realizas.  Que es lo que generalmente haces.
+      kind: yes_no
+      option_a: Te abstienes de comentar para no cometer imprudencias
+      option_b: Te involucras en el tema y entras en la conversación
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 7
+    - header: >
+               Dentro de tu trabajo te han asignado el seguimiento de un proyecto muy importante para la organizacion el cual debe responder a  altos estandares de calidad, uno de
+               los intengrante del proyecto se ha retrazado con la entrega de una de sus tareas, pero esto no compromete al proyecto. Considerarias pertinente no cometer errores
+               y te acercas a la persona para contarle los posibles problemas que sucederian en el proyecto, para exigirle que se comprometa más en el proyecto.
+      kind: yes_no
+      option_a: En desacuerdo
+      option_b: De acuerdo
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+
+# Section 5
+-
+  title: estabilidad emocional
+  questions:
+    # Question 1
+    - header: >
+               Luego de haber expuesto un trabajo de investigación delante de todos tus compañeros de la empresa, que te costó muchas
+               semanas de esfuerzo y del cual te sientes orgulloso,uno de tus compañeros critica todo lo que has hecho y te nombra una
+               gran cantidad de errores que cometiste.  Qué harías:
+      kind: yes_no
+      option_a: Te sientes mal por sus comentarios y comienzas a creer que tu trabajo no fue tan bueno como habías creído
+      option_b: Piensas que nada de lo que dice tiene fundamentos
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 2
+    - header: >
+               Tú jefe te llama a ti y a tu equipo para decirles que está francamente disgustado por los resultados de su último proyecto.
+               Mientras les está hablando de esto, te das cuenta que lo que quedó mal estuvo a cargo de solo uno de tus compañeros de trabajo.
+      kind: yes_no
+      option_a: Te sientes mal por que te acusan de algo que no cometiste
+      option_b: Te sientes mal porque el equipo quedó mal ante el jefe
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 3
+    - header: >
+               Cuando algún poyecto no sale como tu quieres y sabes que es por causa de una persona del equipo donde trabajas
+      kind: yes_no
+      option_a: Prefieres callar y esperar que otro le diga
+      option_b: Acostumbras decirle y expresar tu sentimiento
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 4
+    - header: >
+               Te enteras que tu mejor amigo de la empresa se encuentra involucrado en un robo continuado.
+      kind: yes_no
+      option_a: Te sientes muy mal y preocupado por el asunto
+      option_b: Piensas que lo deben despedir
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 5
+    - header: >
+               Te enteras que alguien de tu equipo de trabajo se encuentra en una crisis emocional.
+      kind: yes_no
+      option_a: Acostumbras acercarte a él para ayudarle y aconsejarlo
+      option_b: Lo evitas para no perturbar
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 6
+    - header: >
+               En tu opinión:
+      kind: yes_no
+      option_a: Prefieres las personas emotivas
+      option_b: Prefieres las personas racionales
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 7
+    - header: >
+               Cuando tienes que presentar exámenes finales, que es lo que te pasa normalmente:
+      kind: yes_no
+      option_a: Te sientes tranquilo y despreocupado
+      option_b: Te sientes preocupado y atento
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+
+# Section 6
+-
+  title: extroversion
+  questions:
+    # Question 1
+    - header: >
+               En la empresa donde laboras hay un programa social para ayudar a la comunidad, en el cual trabajaran varios días al mes.
+               Tienes la posibilidad de unirte al grupo y de ir a la comunidad a hablar con las personas para conocerlos.
+      kind: yes_no
+      option_a: Tu decides encargarte de la logística
+      option_b: Tu decides unirte al grupo encargado de hablar con la comunidad
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 2
+    - header: >
+               Cuando hay una reunión donde la mayoría son desconocidos, tu eres de los que:
+      kind: yes_no
+      option_a: Decides hablar y conocer nuevos contactos
+      option_b: Prefieres estar con aquellos que ya conoces
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 3
+    - header: >
+               En un evento donde hay muchas personas desconocidas:
+      kind: yes_no
+      option_a: Esperas a que alguien se te acerque para entablar conversación
+      option_b: Te acercas a los desconocidos para entablar conversación
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 4
+    - header: >
+               Te invitan al matrimonio de tu jefe al cual accediste a ir pero al llegar notas que no conoces a nadie, entonces tu:
+      kind: yes_no
+      option_a: Saludas, te quedas un tiempo prudencial y luego vas
+      option_b: Entablas convesación con con bastante facilidad
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 5
+    - header: >
+               Debido a que se ha cerrado un trato muy importante en la empresa en la que trabajas, han decidido celebrarlo con una
+               enorme fiesta. Hoy es el día de esta y tú asistes, así como todos los demás empleados. Tu plan cuando llegas a esta es:
+      kind: yes_no
+      option_a: Quedarte unos minutos, saludar a tus compañeros y después irte ya que no te sientes cómodo en ambientes como este.
+      option_b: Quedarte toda la fiesta y disfrutarla al máximo, ya que te encanta estar en este tipo de ambientes.
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 6
+    - header: >
+               Eres de las personas que le gusta:
+      kind: yes_no
+      option_a: Quedarte en casa y en un lugar donde no tenga que estar con mucha gente
+      option_b: Conocer gente todos los días y estar con nuevos amigos
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
+    # Question 7
+    - header: >
+               Cuando tienes problemas personales que te angustian o te preocupan, acostumbras:
+      kind: yes_no
+      option_a: Comentarla con tus amigos y pedir consejo a los demás
+      option_b: Quedarte callado y resolver el problema por tí mismo
+      options:
+        - body: definitely_opt_a
+          value: 1
+        - body: maybe_option_a
+          value: 2
+        - body: neutral
+          value: 2
+        - body: maybe_option_a
+          value: 2
+        - body: maybe_option_a
+          value: 2
