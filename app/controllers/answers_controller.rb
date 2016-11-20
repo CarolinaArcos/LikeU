@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
 
-    # Create a new answer and assigns the user, question and option selected
+    # Create a new answer and assigns the user, the question and the option selected
     @answer = Answer.create_or_initialize(@question, current_user)
     @answer.user = current_user
     @answer.question = @question
@@ -12,12 +12,11 @@ class AnswersController < ApplicationController
 
 
     if @answer.save
-      #current_user.answered_at = DateTime.now
-      #current_user.save!
-
       if current_user.can_continue?
+        # Redirect to the next question in the section
         redirect_to @question.next
       else
+        # Redirect to profile page
         redirect_to current_user
       end
     else

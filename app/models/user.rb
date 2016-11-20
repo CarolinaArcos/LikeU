@@ -18,14 +18,19 @@ class User < ApplicationRecord
     return user
   end
 
+  # Return the las answer saved
   def get_last_answer
     return self.answers.last
   end
 
-  # With diff.integer? ask if the number has decimal part
+  # Return the numer od sections the user resolve each day
   def section_per_day
     diff= 6.0/self.complete_in_days.to_f
+    
+    # sections_per_day is created with complete_in_days positions with diff as default vale
     sections_per_day = Array.new(self.complete_in_days, diff.to_i)
+
+    # With diff.integer? ask if the number has decimal part
     sections_per_day[0] = (sections_per_day.first + 1) unless diff.integer?
     return sections_per_day
   end

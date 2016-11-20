@@ -1,5 +1,6 @@
 class Question < ApplicationRecord
 
+  #Kinds of possible questions
   YES_NO_QUESTION = "yes_no"
 
   has_many :options

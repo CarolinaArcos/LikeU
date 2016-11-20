@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # Return current_user if exist, if not, search in User with :user_id if it's not mil
+  # Return current_user if exist, if not, search in User with :user_id if it's not nil
   def current_user
     return @current_user ||= User.find(session[:user_id]) unless session[:user_id].nil?
   end
