@@ -1,13 +1,12 @@
 
 # coding: utf-8
 
-# In[3]:
+# In[6]:
 
 #Se importan las librerías requeridas para correr todo el script y se definen unas funciones que
 #facilitarán el manejo de SQLite. Se requiere instalar en el computador todas las librerías
 #que no se encuentren instaladas. Se instalan en cmd con pip install "insertar_nombre_de_librería"
 #Ej: pip install itertools
-
 import sys
 
 import numpy as np
@@ -85,10 +84,10 @@ for i in range((len(num_users))):
     f=num_users[i]
     russiandollsel="""
     SELECT value FROM options WHERE
-        option_id IN (SELECT option_id FROM answers WHERE
-            option_id IN (SELECT option_id FROM options WHERE
-                question_id IN (SELECT question_id FROM questions WHERE
-                    section_id IN (SELECT section_id FROM sections WHERE title LIKE "Autoestima")))
+        id IN (SELECT option_id FROM answers WHERE
+            option_id IN (SELECT id FROM options WHERE
+                question_id IN (SELECT id FROM questions WHERE
+                    section_id IN (SELECT id FROM sections WHERE title="autoesquema")))
         AND user_id = '%s')
     """ %f
     out=make_query(russiandollsel)
@@ -101,10 +100,10 @@ for i in range((len(num_users))):
     f=num_users[i]
     russiandollsel="""
     SELECT value FROM options WHERE
-        option_id IN (SELECT option_id FROM answers WHERE
-            option_id IN (SELECT option_id FROM options WHERE
-                question_id IN (SELECT question_id FROM questions WHERE
-                    section_id IN (SELECT section_id FROM sections WHERE title="Apertura mental")))
+        id IN (SELECT option_id FROM answers WHERE
+            option_id IN (SELECT id FROM options WHERE
+                question_id IN (SELECT id FROM questions WHERE
+                    section_id IN (SELECT id FROM sections WHERE title="apertura mental")))
         AND user_id = '%s')
     """ %f
     out=make_query(russiandollsel)
@@ -117,10 +116,10 @@ for i in range((len(num_users))):
     f=num_users[i]
     russiandollsel="""
     SELECT value FROM options WHERE
-        option_id IN (SELECT option_id FROM answers WHERE
-            option_id IN (SELECT option_id FROM options WHERE
-                question_id IN (SELECT question_id FROM questions WHERE
-                    section_id IN (SELECT section_id FROM sections WHERE title="Detallismo")))
+        id IN (SELECT option_id FROM answers WHERE
+            option_id IN (SELECT id FROM options WHERE
+                question_id IN (SELECT id FROM questions WHERE
+                    section_id IN (SELECT id FROM sections WHERE title="detallista")))
         AND user_id = '%s')
     """ %f
     out=make_query(russiandollsel)
@@ -133,10 +132,10 @@ for i in range((len(num_users))):
     f=num_users[i]
     russiandollsel="""
     SELECT value FROM options WHERE
-        option_id IN (SELECT option_id FROM answers WHERE
-            option_id IN (SELECT option_id FROM options WHERE
-                question_id IN (SELECT question_id FROM questions WHERE
-                    section_id IN (SELECT section_id FROM sections WHERE title="Estabilidad emocional")))
+        id IN (SELECT option_id FROM answers WHERE
+            option_id IN (SELECT id FROM options WHERE
+                question_id IN (SELECT id FROM questions WHERE
+                    section_id IN (SELECT id FROM sections WHERE title="estabilidad emocional")))
         AND user_id = '%s')
     """ %f
     out=make_query(russiandollsel)
@@ -151,8 +150,8 @@ for i in range((len(num_users))):
     SELECT value FROM options WHERE
         id IN (SELECT option_id FROM answers WHERE
             option_id IN (SELECT id FROM options WHERE
-                question_id IN (SELECT question_id FROM questions WHERE
-                    section_id IN (SELECT section_id FROM sections WHERE title="Extroversión")))
+                question_id IN (SELECT id FROM questions WHERE
+                    section_id IN (SELECT id FROM sections WHERE title="extroversión")))
         AND user_id = '%s')
     """ %f
     out=make_query(russiandollsel)
@@ -165,10 +164,10 @@ for i in range((len(num_users))):
     f=num_users[i]
     russiandollsel="""
     SELECT value FROM options WHERE
-        option_id IN (SELECT option_id FROM answers WHERE
-            option_id IN (SELECT option_id FROM options WHERE
-                question_id IN (SELECT question_id FROM questions WHERE
-                    section_id IN (SELECT section_id FROM sections WHERE title="Perfección")))
+        id IN (SELECT option_id FROM answers WHERE
+            option_id IN (SELECT id FROM options WHERE
+                question_id IN (SELECT id FROM questions WHERE
+                    section_id IN (SELECT id FROM sections WHERE title="perfeccionismo bajo")))
         AND user_id = '%s')
     """ %f
     out=make_query(russiandollsel)
@@ -194,7 +193,7 @@ perfs=perfdf.sum(axis=1)
 atdf = pd.DataFrame(columns=("Autoestima", "Perfeccionismo Bajo","Orientación Al Detalle",
                     "Extroversión","Estabilidad Emocional","Apertura Mental"))
 for i in range(len(num_users)):
-   atdf.loc[i] = [apms[i],auts[i],esms[i],exts[i],dets[i],perfs[i]]
+   atdf.loc[i] = [auts[i],perfs[i],dets[i],exts[i],esms[i],apms[i]]
 
 #Se llenan dos dataframes con la misma información que
 #el anterior, para no eliminarlo en caso de que los

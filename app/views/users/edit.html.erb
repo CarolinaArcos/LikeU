@@ -22,7 +22,7 @@
 					  <div class="panel-body">
 					    <div class="form-group">
 								<%= f.select(:complete_in_days, nil, {}, {class: "form-control"}) do %>
-			            <% 7.times do | n | %>
+			            <% 6.times do | n | %> <!--  Change 6 to the number of days availables for resolve the test -->
 			              <%= content_tag(:option, "#{n+1}", value: n+1) %>
 			            <% end %>
 			          <% end %>

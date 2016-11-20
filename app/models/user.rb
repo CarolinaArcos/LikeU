@@ -24,7 +24,7 @@ class User < ApplicationRecord
 
   # With diff.integer? ask if the number has decimal part
   def section_per_day
-    diff= 7.0/self.complete_in_days.to_f
+    diff= 6.0/self.complete_in_days.to_f
     sections_per_day = Array.new(self.complete_in_days, diff.to_i)
     sections_per_day[0] = (sections_per_day.first + 1) unless diff.integer?
     return sections_per_day
