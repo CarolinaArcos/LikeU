@@ -10,12 +10,15 @@
 
   <body id="mbd">
       <header>
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12">
-            <a href="index.html"><button class="btn btn-default" id="btnContinuar" style="float:left;">Finalizar sesión</button></a>
-            <!-- TODO finalizar sesion -->
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <% if logged_in? %>
+              <%= link_to("Finalizar Sesión", :logout, method: :delete, class: "btn btn-primary") %>
+              <% end %>
+            </div>
           </div>
-        </div>
+
       </header>
 			<div class="container">
         <%= yield %>

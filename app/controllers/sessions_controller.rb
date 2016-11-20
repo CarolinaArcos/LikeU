@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
+
+  before_action :redirect_to_my_profile!, only: [:new]
+
   # Login
   def new
+
   end
 
   # Login
@@ -26,6 +30,9 @@ class SessionsController < ApplicationController
 
   # Logout
   def destroy
+    session[:user_id] = nil
+
+    redirect_to root_path
   end
 
 

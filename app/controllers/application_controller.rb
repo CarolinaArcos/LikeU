@@ -21,6 +21,11 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, alert: message
   end
 
+  def redirect_to_my_profile!
+    redirect_to user_path(current_user) if logged_in?
+  end
+
+
   # This methods can be call from any view
   helper_method :current_user, :logged_in?
 
