@@ -26,7 +26,7 @@ class User < ApplicationRecord
   # Return the numer od sections the user resolve each day
   def section_per_day
     diff= 6.0/self.complete_in_days.to_f
-    
+
     # sections_per_day is created with complete_in_days positions with diff as default vale
     sections_per_day = Array.new(self.complete_in_days, diff.to_i)
 
@@ -63,6 +63,13 @@ class User < ApplicationRecord
   # Return how many days have pass since the user started the poll
   def days_until_today
     return ((DateTime.now - self.started_at.to_datetime).to_f)
+  end
+
+  def deterinate_progress
+    sections = Section.count
+    user_section = get_last_answer.question.section.id unless get_last_answer.nil?
+    user_section ||= 0
+    return @progress = (user_section * 100) / sections
   end
 
   private

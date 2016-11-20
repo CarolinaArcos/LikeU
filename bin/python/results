@@ -1,12 +1,13 @@
 
 # coding: utf-8
 
-# In[6]:
+# In[1]:
 
 #Se importan las librerías requeridas para correr todo el script y se definen unas funciones que
 #facilitarán el manejo de SQLite. Se requiere instalar en el computador todas las librerías
 #que no se encuentren instaladas. Se instalan en cmd con pip install "insertar_nombre_de_librería"
 #Ej: pip install itertools
+
 import sys
 
 import numpy as np
@@ -76,7 +77,7 @@ nombres=[item[1] for item in out]
 #se extraen los valores de las respuestas que dio cada usuario
 #en cada atributo, los cuales se pasan a un "dataframe".
 #Los titles asignados a cada section fueron (pueden cambiarse):
-#"Autoestima", "Apertura mental", "Detallismo", "Estabilidad
+#"Autoesquema", "Apertura mental", "Detallista", "Estabilidad
 #emocional", "Extroversión", "Perfección"
 
 aut = []
@@ -190,8 +191,8 @@ perfs=perfdf.sum(axis=1)
 #Se crea el "dataframe" atdf que contiene los totales
 #de cada sección para cada individuo (los valores van de 7-35)
 
-atdf = pd.DataFrame(columns=("Autoestima", "Perfeccionismo Bajo","Orientación Al Detalle",
-                    "Extroversión","Estabilidad Emocional","Apertura Mental"))
+atdf = pd.DataFrame(columns=("Autoesquema", "Perfeccionismo Bajo","Orientacion Al Detalle",
+                    "Extroversion","Estabilidad Emocional","Apertura Mental"))
 for i in range(len(num_users)):
    atdf.loc[i] = [auts[i],perfs[i],dets[i],exts[i],esms[i],apms[i]]
 
@@ -334,10 +335,9 @@ for j, k in itertools.product(range(len(num_users)), range(len(grjust.columns)))
 #sea más fácil de entender. En caso de que se quiera visualizar
 #en otra ocasión
 
-grjust=round(grjust,1)
 grjust["Nombre"]=nombres
-cols=["Nombre", "Autoestima", "Perfeccionismo Bajo",
-      "Orientación Al Detalle","Extroversión",
+cols=["Nombre", "Autoesquema", "Perfeccionismo Bajo",
+      "Orientacion Al Detalle","Extroversion",
       "Estabilidad Emocional","Apertura Mental","Valor General"]
 grjust=grjust[cols]
 
@@ -374,7 +374,7 @@ class ComplexRadar():
             ax.xaxis.set_visible(False)
         for i, ax in enumerate(axes):
             grid = np.linspace(*ranges[i],
-                               num=n_ordinate_levels)
+                               num=n_ordinate_levels).astype(int)
             gridlabel = ["{}".format(round(x,2))
                          for x in grid]
             if ranges[i][0] > ranges[i][1]:
@@ -443,12 +443,12 @@ else:
     legendax = fig1.add_axes([0.8,0.8,0.1,.2])
     legendax.legend(handles = lax, labels=names, loc=3, bbox_to_anchor=(0,0,1,1), bbox_transform=fig1.transFigure )
     legendax.axis('off')
-    ttl = sns.plt.title("¿Qué tanto se parece %s al resto de su equipo?"% nombres[i],fontsize=25)
+    ttl = sns.plt.title("%s"% nombres[i],fontsize=25)
     ttl.set_position([-2.5, 1.2])
     sns.plt.show()
 
     #Se crea un mensaje que le dice al usuario cuál es el grado de ajuste que obtuvo con
     #el equipo y si este es bueno o no.
 
-    print ("El grado de ajuste de %s con sus compañeros es del %s%%." % (nombres[i], grjust.loc[i,"Valor General"]))
+    print ("Su grado de ajuste con sus compañeros es del %s%%." % (grjust.loc[i,"Valor General"],))
     print("Es decir que su encaje con el equipo es %s." % levgrjust.loc[i,"Valor General"])
