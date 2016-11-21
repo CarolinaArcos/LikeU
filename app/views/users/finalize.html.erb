@@ -4,22 +4,20 @@
     <h1><%= current_user.name.titleize %> </h1>
   </div>
   <hr>
-  <div class="lead text-white">
-    Has completado con exito todas las sesiones.
+    <div class="lead text-white">
+      Has completado con exito todas las sesiones.
+      <br>
+      A continuación te presentamos los resultados que obtuviste con esta encuesta y como se compara con tu equipo de trabajo
+      <br>
+      <br>
+    </div>
+    <div align="center">
+      <img src="<%= @data[:url] %>" class="img-responsive" alt="Responsive image">
+    </div>
     <br>
-    Muchas gracias por tu participacion, esperamos volver a tenerte pronto con
-    nosotros y que esta experiencia ayude a mejorar tu desempeño y el de tu equipo.
-    <br>
-    <br>
-    Saludos
-    <br>
-    Equipo Like U
-  </div>
-  <img src="<%= @data[:url] %>" class="img-responsive" alt="Responsive image">
-  <p><%= @data[:text].to_s %> </p>
-
-
-  <button  style="width:100%;" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Salir
-  </button>
+    <div class="panel panel-default" align="center">
+      <div class="panel-body panel-height">
+        <%= @data[:text].to_s %>
+      </div>
+    </div>
 </div>

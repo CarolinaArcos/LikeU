@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 #coding: utf-8
 
-# In[78]:
+# In[58]:
 
-#Se importan las librerías requeridas para correr todo el script y se definen unas funciones que
-#facilitarán el manejo de SQLite. Se requiere instalar en el computador todas las librerías
-#que no se encuentren instaladas. Se instalan en cmd con pip install "insertar_nombre_de_librería"
+#Se importan las librerias requeridas para correr todo el script y se definen unas funciones que
+#facilitaran el manejo de SQLite. Se requiere instalar en el computador todas las librerias
+#que no se encuentren instaladas. Se instalan en cmd con pip install "insertar_nombre_de_libreria"
 #Ej: pip install itertools
 import sys
 
@@ -358,7 +358,7 @@ class ComplexRadar():
                  n_ordinate_levels=10):
         angles = np.arange(0, 360, 360./len(variables))
 
-        axes = [fig.add_axes([0.1,0.1,0.8,0.8],polar=True,
+        axes = [fig.add_axes([0.1,0.1,0.9,0.9],polar=True,
                 label = "axes{}".format(i))
                 for i in range(len(variables))]
         l, text = axes[0].set_thetagrids(angles,
@@ -406,15 +406,18 @@ class ComplexRadar():
 i = num_users.index(n)
 name=nombres[i]
 
-if rankdf.isnull().values.any():
-    None
+if rankdf.iloc[i,:].isnull().values.any():
+    print("En este momento es imposible mostrar sus resultados.")
+    print("Es necesario que termine de responder todas las preguntas.")
+    print("Por favor vuelva cuando haya finalizado.")
+    print("Gracias.")
 
 elif len(num_users)==1:
     names=[nombres[i]]
     variables = [k[0] for k in rankdf.iteritems()]
 
     ranges = [(1,10),(1,10),(1,10),(1,10),(1,10),(1,10),(1,10)]
-    fig1 = plt.figure(figsize=(7,7),dpi=80)
+    fig1 = plt.figure(figsize=(7, 7))
     radar = ComplexRadar(fig1, variables, ranges)
     lax = []
 
@@ -431,9 +434,11 @@ elif len(num_users)==1:
     legendax.axis('off')
     ttl = sns.plt.title("%s"% nombres[i],fontsize=25)
     ttl.set_position([-2.5, 1.2])
-
-    # Guarda la imagen creada
+    #sns.plt.show()
     sns.plt.savefig(EXPORTFILE)
+
+    print ("Su grado de ajuste con su compañero es del %s%%." % (grjust.loc[i,"Valor General"],))
+    print("Es decir que su encaje con este es %s." % levgrjust.loc[i,"Valor General"])
 
 elif len(num_users)==2:
     pname=nombres[nombres.index != i]
@@ -442,7 +447,7 @@ elif len(num_users)==2:
     variables = [k[0] for k in rankdf.iteritems()]
 
     ranges = [(1,10),(1,10),(1,10),(1,10),(1,10),(1,10),(1,10)]
-    fig1 = plt.figure(figsize=(7,7),dpi=80)
+    fig1 = plt.figure(figsize=(7, 7))
     radar = ComplexRadar(fig1, variables, ranges)
     lax = []
 
@@ -465,12 +470,12 @@ elif len(num_users)==2:
     legendax.axis('off')
     ttl = sns.plt.title("%s"% nombres[i],fontsize=25)
     ttl.set_position([-2.5, 1.2])
-
-    # Guarda la imagen creada
+    #sns.plt.show()
     sns.plt.savefig(EXPORTFILE)
 
     #Se crea un mensaje que le dice al usuario cuál es el grado de ajuste que obtuvo con
     #el equipo y si este es bueno o no.
+
     print ("Su grado de ajuste con su compañero es del %s%%." % (grjust.loc[i,"Valor General"],))
     print("Es decir que su encaje con este es %s." % levgrjust.loc[i,"Valor General"])
 
@@ -480,7 +485,7 @@ else:
     variables = [k[0] for k in rankdf.iteritems()]
 
     ranges = [(1,10),(1,10),(1,10),(1,10),(1,10),(1,10),(1,10)]
-    fig1 = plt.figure(figsize=(7,7),dpi=80)
+    fig1 = plt.figure(figsize=(7, 7))
     radar = ComplexRadar(fig1, variables, ranges)
     lax = []
 
@@ -503,11 +508,11 @@ else:
     legendax.axis('off')
     ttl = sns.plt.title("%s"% nombres[i],fontsize=25)
     ttl.set_position([-2.5, 1.2])
-
-    # Guarda la imagen creada
+    # sns.plt.show()
     sns.plt.savefig(EXPORTFILE)
 
     #Se crea un mensaje que le dice al usuario cuál es el grado de ajuste que obtuvo con
     #el equipo y si este es bueno o no.
-    print ("Su grado de ajuste con su compañero es del %s%%." % (grjust.loc[i,"Valor General"],))
-    print("Es decir que su encaje con este es %s." % levgrjust.loc[i,"Valor General"]) 
+
+    print ("Su grado de ajuste con sus compañeros es del %s%%." % (grjust.loc[i,"Valor General"],))
+    print("Es decir que su encaje con el equipo es %s." % levgrjust.loc[i,"Valor General"])
