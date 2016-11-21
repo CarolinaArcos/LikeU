@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111020902) do
+ActiveRecord::Schema.define(version: 20161121021257) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "user_id"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20161111020902) do
     t.boolean  "is_active"
     t.datetime "started_at"
     t.datetime "answered_at"
+    t.string   "figure"
     t.index ["email"], name: "index_users_on_email"
     t.index ["team_id"], name: "index_users_on_team_id"
   end

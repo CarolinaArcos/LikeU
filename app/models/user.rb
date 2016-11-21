@@ -3,6 +3,7 @@ class User < ApplicationRecord
   belongs_to :team
   before_create :set_active_default
   before_create :encrypt
+  before_create :generate_figure_identifier
 
   validates :email, uniqueness: true,
                     format: {
@@ -70,6 +71,22 @@ class User < ApplicationRecord
     user_section = get_last_answer.question.section.id unless get_last_answer.nil?
     user_section ||= 0
     return @progress = (user_section * 100) / sections
+  end
+
+  def results
+    cualquiercosa = {}
+    cualquiercosa[:text] =  %x(#{Rails.root}/bin/python/results #{Rails.root} #{self.id} #{self.figure})
+    cualquiercosa[:url] =  "http://127.0.0.1:3000/results/#{self.figure}"
+    return cualquiercosa
+  end
+
+  # Generate an unique identifier for the figure using Universal Unique identifier
+  # Ends the loop when the identifier doesn't exist
+  def generate_figure_identifier
+    loop do
+      self.figure = "#{SecureRandom.uuid}.png"
+      break unless User.exists? figure: self.figure
+    end
   end
 
   private

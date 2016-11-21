@@ -16,11 +16,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 2
     - header: >
                Trabajas en una empresa en la que tus compañeros son muy diferentes a ti en opiniones, creencias y comportamiento,
@@ -34,11 +34,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Quesiton 3
     - header: >
                A uno de tus compañeros de trabajo le han encargado procesar una información antes de entregarlo al día siguiente.
@@ -53,11 +53,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Quesiton 4
     - header: >
                Acabas de salir del examen final y caes en la cuenta de que has te has equivocado en una de las respuestas afectando la
@@ -71,11 +71,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Quesiton 5
     - header: >
                Cuando tienes que hablar en público para exponer un proyecto o algún tema en particular, cuál es tu reacción:
@@ -88,11 +88,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Quesiton 6
     - header: >
                ¿Sientes en ocasiones que la gente no te comprende las ideasy te sientes solo con tu manera de pensar?
@@ -105,11 +105,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     #Quesiton 7
     - header: >
                Eres de las personas que evita presentarse ante un público numeroso para evitar que te critiquen
@@ -122,11 +122,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
 
 # Section 2
 -
@@ -146,11 +146,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 2
     - header: >
                Trabajas en una empresa y eres asendido a un cargo que no tienes suficiente dominio para desempeñarlo.  ¿Que haces?
@@ -163,11 +163,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 3
     - header: >
                Estas presentando un proyecto ante la gerencia en el que has puesto mucho esfuerzo y del que depende que puedas asender
@@ -182,11 +182,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 4
     - header: >
                Eres el encargado de hacer un tratamiento de datos en una empresa donde dudas que seas capaz de hacerlo.  Te enteras que algunos
@@ -200,11 +200,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 5
     - header: >
                En una conversación donde hay varias personas con diferentes opiniones sobre un tema, acostumbras:
@@ -217,11 +217,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 6
     - header: >
                Te encuentras desarrollando una investigacion de suma importancia para la empresa. Si la finalizas quedarás como un
@@ -235,11 +235,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 7
     - header: >
                Te encuentras en un trabajo colaborativo que lleva dos meses en desarrollo y se les presenta un problema al que no han
@@ -254,11 +254,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
 
 # Section 3
 -
@@ -279,11 +279,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 2
     - header: >
                Debes realizar varios reportes que te tomarán hasta el amanecer. Le prometiste a una de tus mejores amigas salir
@@ -299,11 +299,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 3
     - header: >
                Desde hace algunos meses le han encargado realizar un informe del estudio financiero para un proyecto de la empresa.
@@ -320,11 +320,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 4
     - header: >
                Debe realizar un trabajo en equipo y sabes que todos tienen ideas diferentes que al considerarlas, retrasarían el trabajo.  Decides:
@@ -337,11 +337,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 5
     - header: >
                Le han asignado la tarea a un compañero de tu equipo de trabajo organizar un evento. Sabes que él es lento para trabajar y tal vez no termine
@@ -355,11 +355,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 6
     - header: >
                Están en un concuso donde tienes que realizar un trabajo en equipo, pero tu grupo no trabaja como tu quieres.
@@ -372,11 +372,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 7
     - header: >
                Eres el encargado de revisar la calidad de los productos de la bodega donde trabajas.  Encuentras algunos
@@ -390,11 +390,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
 
 # Section 4
 -
@@ -412,11 +412,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 2
     - header: >
                Cuando planea un proyecto, usted acostrubra:
@@ -429,11 +429,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 3
     - header: >
                Cuando tienes que preparar un evento:
@@ -446,11 +446,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 4
     - header: >
                Si tienes que realizar operaciones contables, acostumbras:
@@ -463,11 +463,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 5
     - header: >
                Cuando sales de viaje, acostrubras:
@@ -480,11 +480,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 6
     - header: >
                Te encuentras en una reunion de trabajo donde se discute un tema que no tiene que ver contigo ni te afecta en la labor que realizas.  Que es lo que generalmente haces.
@@ -497,11 +497,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 7
     - header: >
                Dentro de tu trabajo te han asignado el seguimiento de un proyecto muy importante para la organizacion el cual debe responder a  altos estandares de calidad, uno de
@@ -516,11 +516,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
 
 # Section 5
 -
@@ -540,11 +540,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 2
     - header: >
                Tú jefe te llama a ti y a tu equipo para decirles que está francamente disgustado por los resultados de su último proyecto.
@@ -558,11 +558,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 3
     - header: >
                Cuando algún poyecto no sale como tu quieres y sabes que es por causa de una persona del equipo donde trabajas
@@ -575,11 +575,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 4
     - header: >
                Te enteras que tu mejor amigo de la empresa se encuentra involucrado en un robo continuado.
@@ -592,11 +592,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 5
     - header: >
                Te enteras que alguien de tu equipo de trabajo se encuentra en una crisis emocional.
@@ -609,11 +609,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 6
     - header: >
                En tu opinión:
@@ -626,11 +626,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 7
     - header: >
                Cuando tienes que presentar exámenes finales, que es lo que te pasa normalmente:
@@ -643,15 +643,15 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
 
 # Section 6
 -
-  title: extroversion
+  title: "extroversión"
   questions:
     # Question 1
     - header: >
@@ -666,11 +666,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 2
     - header: >
                Cuando hay una reunión donde la mayoría son desconocidos, tu eres de los que:
@@ -683,11 +683,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 3
     - header: >
                En un evento donde hay muchas personas desconocidas:
@@ -700,11 +700,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 4
     - header: >
                Te invitan al matrimonio de tu jefe al cual accediste a ir pero al llegar notas que no conoces a nadie, entonces tu:
@@ -717,11 +717,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 5
     - header: >
                Debido a que se ha cerrado un trato muy importante en la empresa en la que trabajas, han decidido celebrarlo con una
@@ -735,11 +735,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 6
     - header: >
                Eres de las personas que le gusta:
@@ -752,11 +752,11 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5
     # Question 7
     - header: >
                Cuando tienes problemas personales que te angustian o te preocupan, acostumbras:
@@ -769,8 +769,8 @@
         - body: maybe_option_a
           value: 2
         - body: neutral
-          value: 2
+          value: 3
         - body: maybe_option_a
-          value: 2
+          value: 4
         - body: maybe_option_a
-          value: 2
+          value: 5

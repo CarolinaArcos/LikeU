@@ -1,13 +1,12 @@
+#!/usr/bin/env python
+#coding: utf-8
 
-# coding: utf-8
+# In[58]:
 
-# In[1]:
-
-#Se importan las librerías requeridas para correr todo el script y se definen unas funciones que
-#facilitarán el manejo de SQLite. Se requiere instalar en el computador todas las librerías
-#que no se encuentren instaladas. Se instalan en cmd con pip install "insertar_nombre_de_librería"
+#Se importan las librerias requeridas para correr todo el script y se definen unas funciones que
+#facilitaran el manejo de SQLite. Se requiere instalar en el computador todas las librerias
+#que no se encuentren instaladas. Se instalan en cmd con pip install "insertar_nombre_de_libreria"
 #Ej: pip install itertools
-
 import sys
 
 import numpy as np
@@ -24,7 +23,8 @@ import os
 #En PATHSTART se copia la ruta donde se encuentra guardada
 #la base de datos; ej: C:\Winron\Flue
 
-PATHSTART= sys.argv[1]
+PATHSTART=sys.argv[1]
+EXPORTFILE=os.path.join(PATHSTART, "public/results", sys.argv[3])
 
 #Se define la función get_db: Se establece la conexión con la base
 #de datos de sqlite. Toma como argumento dbfile que es el nombre
@@ -45,7 +45,7 @@ def init_db(dbfile):
 #Se inicia la base de datos. En sqlite_file
 #introducir el nombre de la base de datos
 
-sqlite_file="development.sqlite3"
+sqlite_file="db/development.sqlite3"
 db = get_db(sqlite_file)
 c = init_db(db)
 
@@ -58,7 +58,7 @@ def make_query(sel):
     return c.fetchall()
 
 #n es el user_id del usuario actual que se extrae de session
-n=2
+n=int(sys.argv[2])
 
 #A partir del user_id del usuario actual, se determina el
 #equipo al que este pertenece (team_id) para extraer el
@@ -280,15 +280,13 @@ for k in range(len(rankdf.columns)):
     b=rankdf.iloc[:,k].mean()+rankdf.iloc[:,k].std()
     c=a-1.5
     d=b+1.5
-    x=rankdf.iloc[i,k]
     for i in range(len(num_users)):
         if rankdf.iloc[i,k]>=c and rankdf.iloc[i,k]<a:
-            grjust.iloc[i,k]=(rankdf.iloc[i,k]-c)/(a-c)
+            grjust.iloc[i,k]=((rankdf.iloc[i,k]-c)/(a-c))*100
         elif rankdf.iloc[i,k]>=a and rankdf.iloc[i,k]<=b:
-            grjust.iloc[i,k]=1
+            grjust.iloc[i,k]=1*100
         elif rankdf.iloc[i,k]>b and rankdf.iloc[i,k]<=d:
-            grjust.iloc[i,k]=(d-rankdf.iloc[i,k])/(d-b)
-grjust=grjust*100
+            grjust.iloc[i,k]=((d-rankdf.iloc[i,k])/(d-b))*100
 grjust_mean=grjust.mean()
 
 #Se calculan valores similares a los mencionados arriba,
@@ -308,12 +306,11 @@ d=b+1.5
 
 for i in range(len(num_users)):
     if usermn[i]>=c and usermn[i]<a:
-        grjust.loc[i,"Valor General"]=(usermn[i]-c)/(a-c)
+        grjust.loc[i,"Valor General"]=((usermn[i]-c)/(a-c))*100
     elif usermn[i]>=a and usermn[i]<b:
-        grjust.loc[i,"Valor General"]=1
+        grjust.loc[i,"Valor General"]=1*100
     elif usermn[i]>=b and usermn[i]<=d:
-        grjust.loc[i,"Valor General"]=(d-usermn[i])/(d-b)
-grjust.loc[:,"Valor General"]=grjust.loc[:,"Valor General"]*100
+        grjust.loc[i,"Valor General"]=((d-usermn[i])/(d-b))*100
 
 #Se determina el nivel de ajuste de cada individuo con sus
 #compañeros. De 0-50 es bajo, de 50-85 aceptable y de 85-100
@@ -415,8 +412,74 @@ if rankdf.iloc[i,:].isnull().values.any():
     print("Por favor vuelva cuando haya finalizado.")
     print("Gracias.")
 
-else:
+elif len(num_users)==1:
+    names=[nombres[i]]
+    variables = [k[0] for k in rankdf.iteritems()]
 
+    ranges = [(1,10),(1,10),(1,10),(1,10),(1,10),(1,10),(1,10)]
+    fig1 = plt.figure(figsize=(7, 7))
+    radar = ComplexRadar(fig1, variables, ranges)
+    lax = []
+
+    data=rankdf.iloc[i].values
+    l, = radar.plot(data, label=name,color="Green")
+    lax.append(l)
+    #Indica la transparencia de las figuras
+    radar.fill(data,alpha=0.2)
+
+    #Se crea la leyenda para la gráfica y se determina el título
+
+    legendax = fig1.add_axes([0.8,0.8,0.1,.2])
+    legendax.legend(handles = lax, labels=names, loc=3, bbox_to_anchor=(0,0,1,1), bbox_transform=fig1.transFigure )
+    legendax.axis('off')
+    ttl = sns.plt.title("%s"% nombres[i],fontsize=25)
+    ttl.set_position([-2.5, 1.2])
+    #sns.plt.show()
+    sns.plt.savefig(EXPORTFILE)
+
+    print ("Su grado de ajuste con su compañero es del %s%%." % (grjust.loc[i,"Valor General"],))
+    print("Es decir que su encaje con este es %s." % levgrjust.loc[i,"Valor General"])
+
+elif len(num_users)==2:
+    pname=nombres[nombres.index != i]
+    rankmn=rankdf.loc[rankdf.index != i].mean()
+    names=[nombres[nombres.index != i],nombres[i]]
+    variables = [k[0] for k in rankdf.iteritems()]
+
+    ranges = [(1,10),(1,10),(1,10),(1,10),(1,10),(1,10),(1,10)]
+    fig1 = plt.figure(figsize=(7, 7))
+    radar = ComplexRadar(fig1, variables, ranges)
+    lax = []
+
+    data=rankmn.values
+    l, = radar.plot(data, label=pname,color="Blue")
+    lax.append(l)
+    #Indica la transparencia de las figuras
+    radar.fill(data,alpha=0.2)
+
+    data=rankdf.iloc[i].values
+    l, = radar.plot(data, label=name,color="Green")
+    lax.append(l)
+    #Indica la transparencia de las figuras
+    radar.fill(data,alpha=0.2)
+
+    #Se crea la leyenda para la gráfica y se determina el título
+
+    legendax = fig1.add_axes([0.8,0.8,0.1,.2])
+    legendax.legend(handles = lax, labels=names, loc=3, bbox_to_anchor=(0,0,1,1), bbox_transform=fig1.transFigure )
+    legendax.axis('off')
+    ttl = sns.plt.title("%s"% nombres[i],fontsize=25)
+    ttl.set_position([-2.5, 1.2])
+    #sns.plt.show()
+    sns.plt.savefig(EXPORTFILE)
+
+    #Se crea un mensaje que le dice al usuario cuál es el grado de ajuste que obtuvo con
+    #el equipo y si este es bueno o no.
+
+    print ("Su grado de ajuste con su compañero es del %s%%." % (grjust.loc[i,"Valor General"],))
+    print("Es decir que su encaje con este es %s." % levgrjust.loc[i,"Valor General"])
+
+else:
     rankmn=rankdf.loc[rankdf.index != i].mean()
     names=["Resto del equipo",nombres[i]]
     variables = [k[0] for k in rankdf.iteritems()]
@@ -445,7 +508,8 @@ else:
     legendax.axis('off')
     ttl = sns.plt.title("%s"% nombres[i],fontsize=25)
     ttl.set_position([-2.5, 1.2])
-    sns.plt.show()
+    # sns.plt.show()
+    sns.plt.savefig(EXPORTFILE)
 
     #Se crea un mensaje que le dice al usuario cuál es el grado de ajuste que obtuvo con
     #el equipo y si este es bueno o no.

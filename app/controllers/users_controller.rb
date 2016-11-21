@@ -58,6 +58,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def finalize
+    @data = current_user.results
+  end
+
   private
 
   def user_params
