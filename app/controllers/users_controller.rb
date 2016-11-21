@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       @question = Section.first.questions.first
       @is_able = true
     # If the user is in the last question of the test (Finishes all the sections)
-    elsif current_user.get_last_answer.option.question.next.nil?
+  elsif current_user.finished_test?
       # Redirect to finalize page
       redirect_to(user_finalize_path(current_user))
     else
@@ -60,6 +60,7 @@ class UsersController < ApplicationController
 
   def finalize
     @data = current_user.results
+    @show = current_user.show_figure?
   end
 
   private

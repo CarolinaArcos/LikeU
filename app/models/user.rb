@@ -42,6 +42,13 @@ class User < ApplicationRecord
     return false
   end
 
+  def finished_test?
+    unless get_last_answer.nil?
+      return true if get_last_answer.option.question.next.nil?
+    end
+    return false
+  end
+
   # Return true if the next question is in the same section, otherwise change
   # answered_at to the current day and return false
   def can_continue?
@@ -74,10 +81,16 @@ class User < ApplicationRecord
   end
 
   def results
-    cualquiercosa = {}
-    cualquiercosa[:text] =  %x(#{Rails.root}/bin/python/results #{Rails.root} #{self.id} #{self.figure})
-    cualquiercosa[:url] =  "http://127.0.0.1:3000/results/#{self.figure}"
-    return cualquiercosa
+    result = {}
+
+    result[:text] =  %x(#{Rails.root}/bin/python/results #{Rails.root} #{self.id} #{self.figure})
+    result[:url_graph] =  "http://127.0.0.1:3000/results/results_graph/#{self.figure}"
+    result[:url_table] =  "http://127.0.0.1:3000/results/results_table/#{self.figure}"
+    return result
+  end
+
+  def show_figure?
+    return self.team.all_completed?
   end
 
   # Generate an unique identifier for the figure using Universal Unique identifier

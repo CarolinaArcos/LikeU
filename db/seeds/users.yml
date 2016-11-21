@@ -7,10 +7,10 @@
 
 #2
 -
-  name: Mateo
-  email: mateo@hotmail.com
+  name: Juan Sebastian
+  email: juansebastian@hotmail.com
   password: 12345
-  team_id: 2
+  team_id: 1
 
 #3
 -
@@ -23,5 +23,12 @@
 -
   name: Elisa
   email: elisa@hotmail.com
+  password: 12345
+  team_id: 2
+
+#5
+-
+  name: Juan Pablo
+  email: juanpablo@hotmail.com
   password: 12345
   team_id: 2

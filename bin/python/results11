@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #coding: utf-8
 
-# In[2]:
+# In[21]:
 
 
 
@@ -30,8 +30,7 @@ import os
 #la base de datos; ej: C:\Winron\Flue
 
 PATHSTART=sys.argv[1]
-EXPORTFILEGRAPH=os.path.join(PATHSTART, "public/results/results_graph", sys.argv[3])
-EXPORTFILETABLE=os.path.join(PATHSTART, "public/results/results_table", sys.argv[3])
+EXPORTFILE=os.path.join(PATHSTART, "public/results", sys.argv[3])
 
 #Se define la función get_db: Se establece la conexión con la base
 #de datos de sqlite. Toma como argumento dbfile que es el nombre
@@ -427,8 +426,16 @@ else:
     plt.xticks(rotation=0)
     fig2 = hplot.get_figure()
     gca().set_position((0.05, 0.2, 0.7, 0.7))
-    plt.figtext(0.001, 0.05, "Aut: Autoesquema. Perf: Perfeccionismo bajo. Det: Orientacion al detalle.\nExtr: Extroversion. Est: Estabilidad emocional. ApMent: Apertura mental. \nSignificado de los valores: 0-50: Bajo. 50-85: Aceptable 85-100: Ideal", horizontalalignment="left")
+    plt.figtext(0.001, 0.001, "Aut: Autoesquema. Perf: Perfeccionismo bajo. Det: Orientacion al detalle.\nExtr: Extroversion. Est: Estabilidad emocional. ApMent: Apertura mental. \nSignificado de los valores: 0-50: Bajo. 50-85: Aceptable 85-100: Ideal", horizontalalignment="left")
     #sns.plt.show()
+
+    # Guarda la imagen creada
+    sns.plt.savefig(EXPORTFILE)
+
+    #Se crea un mensaje que le dice al usuario cuál es el grado de ajuste que obtuvo con
+    #el equipo y si este es bueno o no.
+    print ("Su grado de ajuste con su compañero es del %s%%." % (grjust.loc[i,"Valor General"],))
+    print("Es decir que su encaje con este es %s." % levgrjust.loc[i,"Valor General"])
 
 if rankdf.isnull().values.any():
     None
@@ -456,6 +463,14 @@ elif len(num_users)==1:
     ttl = sns.plt.title("%s"% nombres[i],fontsize=25)
     ttl.set_position([-2.5, 1.2])
     #sns.plt.show()
+
+    # Guarda la imagen creada
+    sns.plt.savefig(EXPORTFILE)
+
+    #Se crea un mensaje que le dice al usuario cuál es el grado de ajuste que obtuvo con
+    #el equipo y si este es bueno o no.
+    print ("Su grado de ajuste con su compañero es del %s%%." % (grjust.loc[i,"Valor General"],))
+    print("Es decir que su encaje con este es %s." % levgrjust.loc[i,"Valor General"])
 
 elif len(num_users)==2:
     pname=nombres[nombres.index != i]
@@ -487,6 +502,13 @@ elif len(num_users)==2:
     legendax.axis('off')
     ttl = sns.plt.title("%s"% nombres[i],fontsize=25)
     ttl.set_position([-2.5, 1.2])
+    #sns.plt.show
+
+    # Guarda la imagen creada
+    sns.plt.savefig(EXPORTFILE)
+
+    #Se crea un mensaje que le dice al usuario cuál es el grado de ajuste que obtuvo con
+    #el equipo y si este es bueno o no.
     print ("Su grado de ajuste con su compañero es del %s%%." % (grjust.loc[i,"Valor General"],))
     print("Es decir que su encaje con este es %s." % levgrjust.loc[i,"Valor General"])
 
@@ -519,12 +541,12 @@ else:
     legendax.axis('off')
     ttl = sns.plt.title("%s"% nombres[i],fontsize=25)
     ttl.set_position([-2.5, 1.2])
-    print ("Su grado de ajuste con sus compañeros es del %s%%." % (grjust.loc[i,"Valor General"],))
-    print("Es decir que su encaje con el equipo es %s." % levgrjust.loc[i,"Valor General"])
+    #sns.plt.show()
 
+    # Guarda la imagen creada
+    sns.plt.savefig(EXPORTFILE)
 
-# In[3]:
-#fig2 table
-fig2.savefig(EXPORTFILETABLE, bbox_inches='tight')
-#fig1 radar chart
-fig1.savefig(EXPORTFILEGRAPH)
+    #Se crea un mensaje que le dice al usuario cuál es el grado de ajuste que obtuvo con
+    #el equipo y si este es bueno o no.
+    print ("Su grado de ajuste con su compañero es del %s%%." % (grjust.loc[i,"Valor General"],))
+    print("Es decir que su encaje con este es %s." % levgrjust.loc[i,"Valor General"])

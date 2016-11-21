@@ -4,6 +4,7 @@
     <h1><%= current_user.name.titleize %> </h1>
   </div>
   <hr>
+  <% if @show %>
     <div class="lead text-white">
       Has completado con exito todas las sesiones.
       <br>
@@ -11,13 +12,31 @@
       <br>
       <br>
     </div>
-    <div align="center">
-      <img src="<%= @data[:url] %>" class="img-responsive" alt="Responsive image">
-    </div>
-    <br>
-    <div class="panel panel-default" align="center">
-      <div class="panel-body panel-height">
-        <%= @data[:text].to_s %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-md-6">
+          <div align="center">
+            <img src="<%= @data[:url_graph] %>" class="img-responsive" alt="Responsive image">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div align="center">
+            <img src="<%= @data[:url_table] %>" class="img-responsive" alt="Responsive image">
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="well well-sm">
+      <%= @data[:text].to_s %>
+    </div>
+    
+  <% else %>
+    <div class="lead text-white">
+      Has completado con exito todas las sesiones.
+      <br><br>
+      Aún no podemos mostrar tus resultados pues alguno de tus compañeros aún no termina la encuesta por completo
+    </div>
+  <% end %>
+
 </div>
