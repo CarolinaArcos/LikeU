@@ -17,18 +17,18 @@
   name: Juan Esteban
   email: juanesteban@hotmail.com
   password: 12345
-  team_id: 2
+  team_id: 1
 
 #4
 -
   name: Elisa
   email: elisa@hotmail.com
   password: 12345
-  team_id: 2
+  team_id: 1
 
 #5
 -
   name: Juan Pablo
   email: juanpablo@hotmail.com
   password: 12345
-  team_id: 2
+  team_id: 1
